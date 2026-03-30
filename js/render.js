@@ -6,6 +6,32 @@ function renderTags(tags) {
   return `<div class="tags">${tags.map(t => `<span class="tag">${t}</span>`).join('')}</div>`;
 }
 
+// Logo img with fallback to abbr text if image fails to load
+function logoImg(logo, abbr, cls = 'logo-img') {
+  return `<img 
+    src="${logo.src}" 
+    alt="${logo.alt}" 
+    class="${cls}"
+    onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+  /><span class="logo-fallback" style="display:none">${abbr}</span>`;
+}
+
+// ─── TICKER ───────────────────────────────
+function renderTicker() {
+  const track = document.getElementById('ticker-track');
+  if (!track) return;
+  const items = [...TICKER, ...TICKER]; // duplicate for seamless loop
+  track.innerHTML = items.map(item => `
+    <div class="ticker-item">
+      <div class="ticker-logo-wrap">
+        ${logoImg(item.logo, item.name.substring(0, 2).toUpperCase(), 'ticker-logo')}
+      </div>
+      <span class="ticker-name">${item.name}</span>
+    </div>
+  `).join('');
+}
+
+// ─── WORK CARDS ───────────────────────────
 function renderWorkCards() {
   const grid = document.getElementById('work-grid');
   grid.innerHTML = WORK.map(w => `
@@ -36,6 +62,7 @@ function renderWorkCards() {
   `).join('');
 }
 
+// ─── CONSULTING CARDS ─────────────────────
 function renderConsultingCards() {
   const grid = document.getElementById('consulting-grid');
   grid.innerHTML = CONSULTING.map(c => `
@@ -49,6 +76,7 @@ function renderConsultingCards() {
   `).join('');
 }
 
+// ─── SKILLS ───────────────────────────────
 function renderSkills() {
   const grid = document.getElementById('skills-grid');
   grid.innerHTML = SKILLS.map(s => `
@@ -59,31 +87,34 @@ function renderSkills() {
   `).join('');
 }
 
+// ─── JOURNEY ──────────────────────────────
 function renderJourney() {
   const grid = document.getElementById('journey-grid');
-  grid.innerHTML = JOURNEY.map(j => `
-    <div class="journey-card fade-in" onclick="openModal('journey', '${j.role.replace(/[^a-z0-9]/gi, '-').toLowerCase()}')">
-      <div class="journey-logo">${j.logo}</div>
-      <div>
-        <div class="journey-role">${j.role}</div>
-        <div class="journey-org">${j.org}</div>
-        <div class="journey-desc">${j.description}</div>
-        ${renderTags(j.tags)}
+  grid.innerHTML = JOURNEY.map(j => {
+    const id = j.role.replace(/[^a-z0-9]/gi, '-').toLowerCase();
+    return `
+      <div class="journey-card fade-in" onclick="openModal('journey', '${id}')">
+        <div class="journey-logo-wrap">
+          ${logoImg(j.logo, j.abbr, 'journey-logo-img')}
+        </div>
+        <div>
+          <div class="journey-role">${j.role}</div>
+          <div class="journey-org">${j.org}</div>
+          <div class="journey-desc">${j.description}</div>
+          ${renderTags(j.tags)}
+        </div>
+        <div class="journey-year">📅 ${j.year}</div>
       </div>
-      <div class="journey-year">📅 ${j.year}</div>
-    </div>
-  `).join('');
+    `;
+  }).join('');
 }
 
-// ─────────────────────────────────────────
-// MODAL
-// ─────────────────────────────────────────
+// ─── MODAL ────────────────────────────────
 function openModal(type, id) {
   let item;
   if (type === 'work') item = WORK.find(w => w.id === id);
   if (type === 'consulting') item = CONSULTING.find(c => c.id === id);
   if (type === 'journey') item = JOURNEY.find(j => j.role.replace(/[^a-z0-9]/gi, '-').toLowerCase() === id);
-
   if (!item) return;
 
   const content = document.getElementById('modal-content');
@@ -92,7 +123,6 @@ function openModal(type, id) {
     <h2 class="modal-title">${item.title || item.role}</h2>
     <p class="modal-company">${item.company || item.org || ''}</p>
     ${renderTags(item.tags)}
-
     ${item.stats ? `
       <div class="modal-stats">
         ${item.stats.map(s => `
@@ -103,10 +133,8 @@ function openModal(type, id) {
         `).join('')}
       </div>
     ` : ''}
-
     <p class="modal-section-title">Overview</p>
     <div class="modal-body"><p>${item.detail.overview}</p></div>
-
     <p class="modal-section-title">Key Contributions</p>
     <div class="modal-body">
       <ul>${item.detail.bullets.map(b => `<li>${b}</li>`).join('')}</ul>
@@ -122,5 +150,4 @@ function closeModal() {
   document.body.style.overflow = '';
 }
 
-// Close modal on Escape key
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
