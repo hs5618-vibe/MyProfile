@@ -3,6 +3,28 @@
 // Edit this file to update the site content
 // ─────────────────────────────────────────
 
+// Logo helper — uses Clearbit for company logos (free, reliable)
+const LOGOS = {
+  nyu:        { src: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/New_York_University_Seal.svg/200px-New_York_University_Seal.svg.png", alt: "NYU" },
+  goldman:    { src: "https://logo.clearbit.com/goldmansachs.com", alt: "Goldman Sachs" },
+  esusu:      { src: "https://logo.clearbit.com/esusu.org", alt: "Esusu" },
+  daiict:     { src: "https://upload.wikimedia.org/wikipedia/en/thumb/e/eb/DA-IICT_logo.png/200px-DA-IICT_logo.png", alt: "DA-IICT" },
+  endless:    { src: "https://logo.clearbit.com/endlessfrontierlabs.com", alt: "Endless Frontier Labs" },
+  quantit:    { src: "https://logo.clearbit.com/quantit.io", alt: "Quantit" },
+  nyu_accel:  { src: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/New_York_University_Seal.svg/200px-New_York_University_Seal.svg.png", alt: "NYU AI Accelerator" },
+};
+
+// Ticker items — shown in the sliding bar
+const TICKER = [
+  { name: "NYU Stern",                     logo: LOGOS.nyu },
+  { name: "Goldman Sachs",                 logo: LOGOS.goldman },
+  { name: "Esusu",                         logo: LOGOS.esusu },
+  { name: "NYU AI Innovation Accelerator", logo: LOGOS.nyu_accel },
+  { name: "Endless Frontier Labs",         logo: LOGOS.endless },
+  { name: "Quantit · Korea",               logo: LOGOS.quantit },
+  { name: "DA-IICT",                       logo: LOGOS.daiict },
+];
+
 const WORK = [
   {
     id: "esusu",
