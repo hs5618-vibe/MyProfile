@@ -54,13 +54,12 @@ nav {
    HERO
 ───────────────────────────────────────── */
 .hero {
-  min-height: 100vh;
-  padding: 120px 6vw 80px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
-  gap: 4rem;
-  max-width: 1200px;
+  min-height: 60vh;
+  padding: 140px 6vw 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 780px;
   margin: 0 auto;
 }
 .hero-name {
