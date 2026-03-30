@@ -58,7 +58,7 @@ nav {
   padding: 140px 6vw 80px;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  align-items: center;
+  align-items: start;
   gap: 4rem;
   max-width: 1200px;
   margin: 0 auto;
