@@ -148,32 +148,41 @@ nav {
 ───────────────────────────────────────── */
 .ticker-wrap {
   overflow: hidden;
-  padding: 1.5rem 0;
+  padding: 1.75rem 0;
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
 }
 .ticker-track {
   display: flex;
   align-items: center;
-  gap: 2rem;
-  animation: ticker 25s linear infinite;
+  gap: 4rem;
+  animation: ticker 30s linear infinite;
   width: max-content;
 }
 .ticker-track:hover { animation-play-state: paused; }
 .ticker-item {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.95rem;
-  font-weight: 500;
-  color: var(--text-muted);
-  opacity: 0.65;
-  white-space: nowrap;
+  display: flex;
+  align-items: center;
   flex-shrink: 0;
-  letter-spacing: 0.01em;
+  opacity: 0.75;
+  transition: opacity 0.2s;
 }
-.ticker-dot {
-  color: var(--border);
-  font-size: 1rem;
-  flex-shrink: 0;
+.ticker-item:hover { opacity: 1; }
+.ticker-logo {
+  height: 32px;
+  width: auto;
+  max-width: 160px;
+  object-fit: contain;
+  display: block;
+  filter: grayscale(100%);
+  transition: filter 0.2s;
+}
+.ticker-item:hover .ticker-logo { filter: grayscale(0%); }
+.ticker-text {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  letter-spacing: 0.02em;
 }
 @keyframes ticker {
   0% { transform: translateX(0); }
