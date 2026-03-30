@@ -3,15 +3,15 @@
 // Edit this file to update the site content
 // ─────────────────────────────────────────
 
-// Logo helper — uses Clearbit for company logos (free, reliable)
+// Logo helper — using favicon/logo APIs that are reliably free
 const LOGOS = {
-  nyu:        { src: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/New_York_University_Seal.svg/200px-New_York_University_Seal.svg.png", alt: "NYU" },
-  goldman:    { src: "https://logo.clearbit.com/goldmansachs.com", alt: "Goldman Sachs" },
-  esusu:      { src: "https://logo.clearbit.com/esusu.org", alt: "Esusu" },
-  daiict:     { src: "https://upload.wikimedia.org/wikipedia/en/thumb/e/eb/DA-IICT_logo.png/200px-DA-IICT_logo.png", alt: "DA-IICT" },
-  endless:    { src: "https://logo.clearbit.com/endlessfrontierlabs.com", alt: "Endless Frontier Labs" },
-  quantit:    { src: "https://logo.clearbit.com/quantit.io", alt: "Quantit" },
-  nyu_accel:  { src: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/New_York_University_Seal.svg/200px-New_York_University_Seal.svg.png", alt: "NYU AI Accelerator" },
+  nyu:        { src: "https://www.google.com/s2/favicons?domain=stern.nyu.edu&sz=64", alt: "NYU" },
+  goldman:    { src: "https://www.google.com/s2/favicons?domain=goldmansachs.com&sz=64", alt: "Goldman Sachs" },
+  esusu:      { src: "https://www.google.com/s2/favicons?domain=esusu.org&sz=64", alt: "Esusu" },
+  daiict:     { src: "https://www.google.com/s2/favicons?domain=daiict.ac.in&sz=64", alt: "DA-IICT" },
+  endless:    { src: "https://www.google.com/s2/favicons?domain=endlessfrontierlabs.com&sz=64", alt: "Endless Frontier Labs" },
+  quantit:    { src: "https://www.google.com/s2/favicons?domain=quantit.io&sz=64", alt: "Quantit" },
+  nyu_accel:  { src: "https://www.google.com/s2/favicons?domain=nyu.edu&sz=64", alt: "NYU AI Accelerator" },
 };
 
 // Ticker items — shown in the sliding bar
