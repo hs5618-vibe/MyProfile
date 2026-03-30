@@ -174,10 +174,8 @@ nav {
   max-width: 160px;
   object-fit: contain;
   display: block;
-  filter: grayscale(100%);
-  transition: filter 0.2s;
+  filter: none;
 }
-.ticker-item:hover .ticker-logo { filter: grayscale(0%); }
 .ticker-text {
   font-family: 'DM Serif Display', serif;
   font-size: 1.1rem;
