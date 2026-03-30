@@ -177,7 +177,8 @@ const SKILLS = [
 
 const JOURNEY = [
   {
-    logo: "NYU",
+    logo: LOGOS.nyu,
+    abbr: "NYU",
     role: "MBA Candidate",
     org: "NYU Stern School of Business · Strategy, Product Management & Finance",
     year: "2024 – 2026",
@@ -194,7 +195,8 @@ const JOURNEY = [
     }
   },
   {
-    logo: "ES",
+    logo: LOGOS.esusu,
+    abbr: "ES",
     role: "Product Manager Intern",
     org: "Esusu · Credit-Building Fintech · New York",
     year: "Summer 2025",
@@ -211,7 +213,8 @@ const JOURNEY = [
     }
   },
   {
-    logo: "GS",
+    logo: LOGOS.goldman,
+    abbr: "GS",
     role: "Associate · Product Manager",
     org: "Goldman Sachs · Bangalore",
     year: "2022 – 2024",
@@ -228,7 +231,8 @@ const JOURNEY = [
     }
   },
   {
-    logo: "GS",
+    logo: LOGOS.goldman,
+    abbr: "GS",
     role: "Analyst · Software Engineer",
     org: "Goldman Sachs · Bangalore",
     year: "2019 – 2021",
@@ -244,7 +248,8 @@ const JOURNEY = [
     }
   },
   {
-    logo: "DA",
+    logo: LOGOS.daiict,
+    abbr: "DA",
     role: "B.Tech in ICT",
     org: "DA-IICT · Gandhinagar, India",
     year: "2015 – 2019",
