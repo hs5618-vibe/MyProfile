@@ -169,7 +169,7 @@ nav {
 }
 .ticker-item:hover { opacity: 1; }
 .ticker-logo {
-  height: 44px;
+  height: 52px;
   width: auto;
   max-width: 160px;
   object-fit: contain;
