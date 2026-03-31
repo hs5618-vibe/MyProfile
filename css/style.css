@@ -92,7 +92,8 @@ nav {
   flex-direction: column;
   gap: 0;
   width: 100%;
-  max-width: 400px;
+  padding-left: 4rem;
+  border-left: 1px solid var(--border);
 }
 .hero-stat {
   padding: 1.75rem 0;
