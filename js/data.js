@@ -74,12 +74,14 @@ const WORK = [
   },
   {
     id: "awaydays",
-    title: "AwayDays NYC",
+    title: "AwayDayz NYC",
     company: "Side Project · Soccer Matchday Guide",
-    year: "2025",
-    description: "Built a soccer matchday companion for NYC fans — helping supporters plan away trips, discover viewing parties, and connect with the local soccer community.",
-    tags: ["Product Design", "Community", "Soccer", "NYC"],
+    year: "2024 – Present",
+    url: "awaydays.html",
+    description: "Built a two-sided platform connecting NYC soccer fans with bars showing their team's game. 15 bars onboarded, 188 matches listed across 6 leagues.",
+    tags: ["0→1 Product", "Marketplace", "React", "Node.js", "Supabase"],
     emoji: "⚽",
+    caseStudy: "awaydays.html",
     detail: {
       overview: "A passion project born from the NYC soccer scene — built to help away fans navigate the city on matchday. Aggregates pub guides, supporter culture, and event info in one place.",
       bullets: [

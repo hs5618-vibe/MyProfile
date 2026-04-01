@@ -42,9 +42,22 @@ function renderWorkCards() {
         <p class="work-card-company">${w.company}</p>
         <p class="work-card-desc">${w.description}</p>
         ${renderTags(w.tags)}
-        <button class="detail-btn" onclick="openModal('work', '${w.id}')">View full case study →</button>
+        <a href="${w.caseStudy || '#'}" class="detail-btn" onclick="if(!w.caseStudy){event.preventDefault();openModal('work','${w.id}')}">View full case study →</a>
       </div>
-      
+      <div class="work-card-right">
+        ${w.stats ? `
+          <div class="impact-block">
+            ${w.stats.map(s => `
+              <div>
+                <div class="impact-num">${s.num}</div>
+                <div class="impact-label">${s.label}</div>
+              </div>
+            `).join('')}
+          </div>
+        ` : `
+          <div class="project-visual">${w.emoji || '🚀'}</div>
+        `}
+      </div>
     </div>
   `).join('');
 }
