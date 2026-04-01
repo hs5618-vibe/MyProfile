@@ -44,11 +44,7 @@ function renderWorkCards() {
         ${renderTags(w.tags)}
         <button class="detail-btn" onclick="openModal('work', '${w.id}')">View full case study →</button>
       </div>
-      ${w.emoji ? `
-        <div class="work-card-right">
-          <div class="project-visual">${w.emoji}</div>
-        </div>
-      ` : ''}
+      
     </div>
   `).join('');
 }
