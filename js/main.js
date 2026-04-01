@@ -4,6 +4,7 @@
 
 document.addEventListener('DOMContentLoaded', () => {
   // Render all sections from data
+  renderTicker();
   renderWorkCards();
   renderConsultingCards();
   renderSkills();
