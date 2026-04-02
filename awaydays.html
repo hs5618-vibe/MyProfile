@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AwayDayz — Het Shah</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .cs-wrap { max-width: 860px; margin: 0 auto; padding: 100px 6vw 80px; }
+    .cs-back { display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.85rem; color: var(--text-muted); text-decoration: none; margin-bottom: 3rem; transition: color 0.2s; }
+    .cs-back:hover { color: var(--accent); }
+    .cs-eyebrow { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent); margin-bottom: 0.75rem; }
+    .cs-title { font-family: 'DM Serif Display', serif; font-size: clamp(2.5rem, 6vw, 4rem); font-weight: 400; line-height: 1.1; margin-bottom: 1rem; color: var(--text); }
+    .cs-subtitle { font-size: 1.1rem; color: var(--text-muted); line-height: 1.7; max-width: 680px; margin-bottom: 1.5rem; }
+    .cs-live { display: inline-flex; align-items: center; gap: 0.5rem; background: var(--accent); color: #fff; padding: 0.65rem 1.3rem; border-radius: 8px; font-size: 0.9rem; font-weight: 500; text-decoration: none; font-family: 'DM Sans', sans-serif; transition: background 0.2s; margin-bottom: 2.5rem; }
+    .cs-live:hover { background: var(--accent-light); }
+    .cs-meta { display: flex; flex-wrap: wrap; gap: 2rem; padding: 1.5rem 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); margin-bottom: 3rem; }
+    .cs-meta-label { font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted); margin-bottom: 0.3rem; }
+    .cs-meta-value { font-size: 0.9rem; color: var(--text); font-weight: 500; }
+    .cs-tools { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+    .cs-tool { background: var(--tag-bg); border: 1px solid var(--tag-border); border-radius: 20px; padding: 0.2rem 0.75rem; font-size: 0.78rem; color: var(--text); }
+    .cs-section { margin-bottom: 3rem; }
+    .cs-section-title { font-family: 'DM Serif Display', serif; font-size: 1.75rem; font-weight: 400; margin-bottom: 1rem; color: var(--text); }
+    .cs-text { font-size: 1rem; color: var(--text-muted); line-height: 1.8; margin-bottom: 1rem; }
+    .cs-screenshot-wrap { margin: 1.5rem 0; border-radius: 12px; overflow: hidden; border: 1px solid var(--border); box-shadow: 0 4px 24px rgba(0,0,0,0.08); }
+    .cs-screenshot-wrap img { width: 100%; height: auto; display: block; }
+    .cs-screenshot-caption { font-size: 0.78rem; color: var(--text-muted); margin-top: 0.5rem; padding-left: 0.25rem; margin-bottom: 1.5rem; }
+    .cs-screenshots-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1.5rem 0; }
+    .cs-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin: 1.5rem 0; }
+    .cs-stat { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 1.25rem; }
+    .cs-stat-num { font-family: 'DM Serif Display', serif; font-size: 2rem; color: var(--accent); line-height: 1; margin-bottom: 0.3rem; }
+    .cs-stat-label { font-size: 0.8rem; color: var(--text-muted); line-height: 1.4; }
+    .cs-learnings { display: flex; flex-direction: column; gap: 0.75rem; margin: 1.25rem 0; }
+    .cs-learning { background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; padding: 1rem 1.25rem; font-size: 0.92rem; color: var(--text-muted); line-height: 1.6; }
+    .cs-learning strong { color: var(--text); font-weight: 600; display: block; margin-bottom: 0.2rem; }
+    .cs-divider { height: 1px; background: var(--border); margin: 3rem 0; }
+    .cs-cta { display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; padding-top: 2rem; border-top: 1px solid var(--border); }
+    @media (max-width: 768px) { .cs-screenshots-2col { grid-template-columns: 1fr; } .cs-stats { grid-template-columns: 1fr 1fr; } }
+  </style>
+</head>
+<body>
+
+  <nav><span class="nav-name">Het Shah</span></nav>
+
+  <div class="cs-wrap">
+
+    <a href="index.html" class="cs-back">← Back to portfolio</a>
+
+    <div class="cs-hero fade-in">
+      <div class="cs-eyebrow">Side Project · 2024 — Present</div>
+      <h1 class="cs-title">AwayDayz NYC</h1>
+      <p class="cs-subtitle">My friend Roberto and I kept asking the same question every weekend: which bar in NYC is showing our team's game? There was no good answer. So we built one.</p>
+      <a href="https://www.awaydayz.co" target="_blank" class="cs-live">Visit awaydayz.co ↗</a>
+    </div>
+
+    <div class="cs-meta fade-in">
+      <div>
+        <div class="cs-meta-label">Role</div>
+        <div class="cs-meta-value">Solo Founder</div>
+      </div>
+      <div>
+        <div class="cs-meta-label">Co-founder</div>
+        <div class="cs-meta-value">Roberto (NYU Stern MBA)</div>
+      </div>
+      <div>
+        <div class="cs-meta-label">Status</div>
+        <div class="cs-meta-value">Live · 15 bars onboarded</div>
+      </div>
+      <div>
+        <div class="cs-meta-label">Stack</div>
+        <div class="cs-tools">
+          <span class="cs-tool">React</span>
+          <span class="cs-tool">Node.js</span>
+          <span class="cs-tool">Supabase</span>
+          <span class="cs-tool">Football API</span>
+          <span class="cs-tool">Vercel</span>
+          <span class="cs-tool">Figma</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="cs-section fade-in">
+      <h2 class="cs-section-title">The Product</h2>
+      <p class="cs-text">Search any team or browse by league. Find which bars in NYC are confirmed showing the game. See how many people are going and mark yourself as attending. Bar owners get a simple admin portal to manage their schedule.</p>
+
+      <div class="cs-screenshot-wrap">
+        <img src="case-studies/awaydays/screen1.png" alt="AwayDayz home screen" />
+      </div>
+      <p class="cs-screenshot-caption">Home screen — 188 upcoming matches across 6 leagues, searchable by team or filtered by league.</p>
+
+      <div class="cs-screenshots-2col">
+        <div>
+          <div class="cs-screenshot-wrap">
+            <img src="case-studies/awaydays/screen2.png" alt="Bar finder for a specific match" />
+          </div>
+          <p class="cs-screenshot-caption">Tap a match to see confirmed bars, sorted by distance.</p>
+        </div>
+        <div>
+          <div class="cs-screenshot-wrap">
+            <img src="case-studies/awaydays/screen3.png" alt="Bar detail page" />
+          </div>
+          <p class="cs-screenshot-caption">Bar detail — fans can mark themselves as going and see who else is attending.</p>
+        </div>
+      </div>
+
+      <div class="cs-screenshot-wrap">
+        <img src="case-studies/awaydays/screen4.png" alt="Bar owner admin portal" />
+      </div>
+      <p class="cs-screenshot-caption">Bar owner portal — venues check off which upcoming matches they are showing. Takes 2 minutes.</p>
+    </div>
+
+    <div class="cs-divider"></div>
+
+    <div class="cs-section fade-in">
+      <h2 class="cs-section-title">Where It Came From</h2>
+      <p class="cs-text">Roberto is Italian and grew up watching Serie A. I grew up watching the Premier League. We met at Stern and quickly bonded over soccer. The problem hit us the same weekend: we both tried to find a bar showing our games, came up empty, and ended up watching on our laptops.</p>
+      <p class="cs-text">Before writing any code, we talked to people. Fans at supporter club meetups, friends from NYU, and we walked into about 15 bars across the city. What we found confirmed the problem on both sides.</p>
+
+      <div class="cs-learnings">
+        <div class="cs-learning">
+          <strong>Fans had no reliable source</strong>
+          Google returns outdated info. Reddit threads are hit or miss. The only real option was calling bars one by one, which nobody does.
+        </div>
+        <div class="cs-learning">
+          <strong>Bars wanted to be discovered</strong>
+          Every bar owner said the same thing: they post on Instagram stories but it disappears in 24 hours. They had no way to reach fans who were not already following them.
+        </div>
+        <div class="cs-learning">
+          <strong>Crowd size matters more than we expected</strong>
+          Multiple fans said they would only go to a bar if they knew others were going. Watching alone at a bar is worse than watching at home. The social signal was just as important as the logistics.
+        </div>
+      </div>
+    </div>
+
+    <div class="cs-divider"></div>
+
+    <div class="cs-section fade-in">
+      <h2 class="cs-section-title">Why I Could Build This Myself</h2>
+      <p class="cs-text">Most MBAs at this stage would hire a freelancer. I built it myself. My background as a software engineer at Goldman Sachs meant I could go from idea to live product without a technical co-founder.</p>
+      <p class="cs-text">I built the full stack: React frontend, Node backend, Supabase for the database and auth, integrated a live football fixtures API for match data, and deployed on Vercel. The bar owner admin portal was designed and shipped in a single weekend after our first bar conversations.</p>
+      <p class="cs-text">This is the part of my background that makes me a different kind of PM. I can prototype, I can talk to an engineering team as a peer, and I can ship something myself when it matters. AwayDayz is a real example of that.</p>
+    </div>
+
+    <div class="cs-divider"></div>
+
+    <div class="cs-section fade-in">
+      <h2 class="cs-section-title">Where It Stands</h2>
+      <div class="cs-stats">
+        <div class="cs-stat">
+          <div class="cs-stat-num">15</div>
+          <div class="cs-stat-label">NYC bars onboarded</div>
+        </div>
+        <div class="cs-stat">
+          <div class="cs-stat-num">188</div>
+          <div class="cs-stat-label">upcoming matches listed</div>
+        </div>
+        <div class="cs-stat">
+          <div class="cs-stat-num">6</div>
+          <div class="cs-stat-label">leagues covered</div>
+        </div>
+        <div class="cs-stat">
+          <div class="cs-stat-num">2</div>
+          <div class="cs-stat-label">sided marketplace built from scratch</div>
+        </div>
+      </div>
+      <p class="cs-text">We are still early. The core product works and bars are actively managing their schedules. The focus right now is growing supply so fans have a reason to come back every weekend.</p>
+    </div>
+
+    <div class="cs-divider"></div>
+
+    <div class="cs-section fade-in">
+      <h2 class="cs-section-title">The Bigger Vision</h2>
+      <p class="cs-text">NYC is just the start. The same problem exists everywhere. A Liverpool fan visiting New York, a Real Madrid fan in Tokyo, an Arsenal fan in Sydney: they all have no idea where to watch their team. We want AwayDayz to be the answer regardless of city or sport.</p>
+      <div class="cs-learnings">
+        <div class="cs-learning">
+          <strong>Global expansion</strong>
+          Any sport, any city. The infrastructure we built works for any bar and any fixture feed.
+        </div>
+        <div class="cs-learning">
+          <strong>Watch party hosting</strong>
+          Let fans formally host events at a bar, set a headcount, and invite their supporter group. Bar owners get advance notice of a crowd coming.
+        </div>
+        <div class="cs-learning">
+          <strong>Bar analytics</strong>
+          Give owners a dashboard showing expected crowd size by game so they can staff up and run promotions ahead of big matches.
+        </div>
+      </div>
+    </div>
+
+    <div class="cs-cta fade-in">
+      <a href="https://www.awaydayz.co" target="_blank" class="cs-live">Visit awaydayz.co ↗</a>
+      <a href="index.html" class="btn">← Back to portfolio</a>
+    </div>
+
+  </div>
+
+  <script>
+    document.querySelectorAll('.fade-in').forEach(el => el.classList.add('visible'));
+  </script>
+</body>
+</html>
