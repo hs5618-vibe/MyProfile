@@ -55,6 +55,7 @@ const WORK = [
     title: "Capital Optimization Platform",
     company: "Goldman Sachs · Associate PM",
     year: "2022 – 2024",
+    url: "goldman.html",
     description: "Led a firmwide, multi-quarter capital optimization initiative across trading and secured financing businesses, improving capital buffer efficiency by $1.2B.",
     tags: ["Enterprise PM", "Capital Markets", "Experimentation", "SQL", "10+ Regions"],
     stats: [
