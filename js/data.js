@@ -78,7 +78,7 @@ const WORK = [
     id: "awaydays",
     title: "AwayDayz NYC",
     company: "Side Project · Soccer Matchday Guide",
-    year: "2024 – Present",
+    year: "2026 – Present",
     url: "awaydays.html",
     description: "Built a two-sided platform connecting NYC soccer fans with bars showing their team's game. 15 bars onboarded, 188 matches listed across 6 leagues.",
     tags: ["0→1 Product", "Marketplace", "React", "Node.js", "Supabase"],

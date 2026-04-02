@@ -260,6 +260,7 @@ section {
   border-radius: var(--radius);
   padding: 1.25rem;
   transition: box-shadow 0.2s;
+  justify-content: space-between;
 }
 .work-card:hover { box-shadow: 0 4px 24px rgba(0,0,0,0.07); }
 .work-card-title {
