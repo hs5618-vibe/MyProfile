@@ -36,17 +36,17 @@ function renderWorkCards() {
   const grid = document.getElementById('work-grid');
   grid.innerHTML = WORK.map(w => `
     <div class="work-card fade-in">
-      <div class="work-card-left">
+      <div class="work-card-top">
         <div class="year-badge">📅 ${w.year}</div>
         <h3 class="work-card-title">${w.title}</h3>
         <p class="work-card-company">${w.company}</p>
         <p class="work-card-desc">${w.description}</p>
         ${renderTags(w.tags)}
-        ${w.url
-          ? `<a href="${w.url}" class="detail-btn">View full case study →</a>`
-          : `<button class="detail-btn" onclick="openModal('work', '${w.id}')">View full case study →</button>`
-        }
       </div>
+      ${w.url
+        ? `<a href="${w.url}" class="detail-btn">View full case study →</a>`
+        : `<button class="detail-btn" onclick="openModal('work', '${w.id}')">View full case study →</button>`
+      }
 
     </div>
   `).join('');
