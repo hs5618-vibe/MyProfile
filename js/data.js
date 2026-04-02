@@ -31,6 +31,7 @@ const WORK = [
     title: "AI Mortgage Underwriting",
     company: "Esusu · PM Intern",
     year: "2025",
+    url: "esusu.html",
     description: "Owned 0→1 strategy for an AI-powered mortgage underwriting product leveraging verified rental cash-flow data. Improved pilot-to-contract conversion by 22%.",
     tags: ["0→1 Product", "Fintech", "SQL", "AI/ML", "Roadmapping"],
     stats: [
