@@ -250,6 +250,7 @@ section {
 /* ─────────────────────────────────────────
    WORK CARDS
 ───────────────────────────────────────── */
+.work-card-top { flex: 1; }
 .work-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
 .work-card {
   display: flex;
