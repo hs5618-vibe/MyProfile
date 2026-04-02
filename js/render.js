@@ -44,7 +44,10 @@ function renderWorkCards() {
         ${renderTags(w.tags)}
         ${w.url
           ? `<a href="${w.url}" class="detail-btn">View full case study →</a>`
+          : `${w.url
+          ? `<a href="${w.url}" class="detail-btn">View full case study →</a>`
           : `<button class="detail-btn" onclick="openModal('work', '${w.id}')">View full case study →</button>`
+        }`
         }
       </div>
 
