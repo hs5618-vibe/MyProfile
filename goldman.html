@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Goldman Sachs — Capital Optimization · Het Shah</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .cs-wrap { max-width: 860px; margin: 0 auto; padding: 100px 6vw 80px; }
+    .cs-back { display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.85rem; color: var(--text-muted); text-decoration: none; margin-bottom: 3rem; transition: color 0.2s; }
+    .cs-back:hover { color: var(--accent); }
+    .cs-eyebrow { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent); margin-bottom: 0.75rem; }
+    .cs-title { font-family: 'DM Serif Display', serif; font-size: clamp(2.5rem, 6vw, 4rem); font-weight: 400; line-height: 1.1; margin-bottom: 1rem; color: var(--text); }
+    .cs-subtitle { font-size: 1.1rem; color: var(--text-muted); line-height: 1.7; max-width: 680px; margin-bottom: 2.5rem; }
+    .cs-meta { display: flex; flex-wrap: wrap; gap: 2rem; padding: 1.5rem 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); margin-bottom: 3rem; }
+    .cs-meta-label { font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted); margin-bottom: 0.3rem; }
+    .cs-meta-value { font-size: 0.9rem; color: var(--text); font-weight: 500; }
+    .cs-tools { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+    .cs-tool { background: var(--tag-bg); border: 1px solid var(--tag-border); border-radius: 20px; padding: 0.2rem 0.75rem; font-size: 0.78rem; color: var(--text); }
+    .cs-section { margin-bottom: 3rem; }
+    .cs-section-title { font-family: 'DM Serif Display', serif; font-size: 1.75rem; font-weight: 400; margin-bottom: 1rem; color: var(--text); }
+    .cs-text { font-size: 1rem; color: var(--text-muted); line-height: 1.8; margin-bottom: 1rem; }
+    .cs-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin: 1.5rem 0; }
+    .cs-stat { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 1.25rem; }
+    .cs-stat-num { font-family: 'DM Serif Display', serif; font-size: 2rem; color: var(--accent); line-height: 1; margin-bottom: 0.3rem; }
+    .cs-stat-label { font-size: 0.8rem; color: var(--text-muted); line-height: 1.4; }
+    .cs-learnings { display: flex; flex-direction: column; gap: 0.75rem; margin: 1.25rem 0; }
+    .cs-learning { background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; padding: 1rem 1.25rem; font-size: 0.92rem; color: var(--text-muted); line-height: 1.6; }
+    .cs-learning strong { color: var(--text); font-weight: 600; display: block; margin-bottom: 0.2rem; }
+    .cs-divider { height: 1px; background: var(--border); margin: 3rem 0; }
+    .cs-cta { display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; padding-top: 2rem; border-top: 1px solid var(--border); }
+
+    /* Before/after */
+    .cs-before-after { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1.5rem 0; }
+    .cs-ba-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 1.25rem; }
+    .cs-ba-label { font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.5rem; }
+    .cs-ba-label.before { color: #a06060; }
+    .cs-ba-label.after { color: var(--accent); }
+    .cs-ba-title { font-weight: 600; font-size: 1rem; margin-bottom: 0.4rem; color: var(--text); }
+    .cs-ba-desc { font-size: 0.85rem; color: var(--text-muted); line-height: 1.55; }
+
+    /* Pipeline steps */
+    .cs-pipeline { display: flex; flex-direction: column; gap: 0.5rem; margin: 1.25rem 0; }
+    .cs-pipeline-step { display: flex; gap: 1rem; align-items: flex-start; }
+    .cs-pipeline-num { width: 28px; height: 28px; border-radius: 50%; background: var(--accent); color: #fff; font-size: 0.78rem; font-weight: 600; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 0.1rem; }
+    .cs-pipeline-content { background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; padding: 0.85rem 1rem; flex: 1; }
+    .cs-pipeline-title { font-weight: 600; font-size: 0.88rem; color: var(--text); margin-bottom: 0.2rem; }
+    .cs-pipeline-desc { font-size: 0.82rem; color: var(--text-muted); line-height: 1.5; }
+    .cs-pipeline-line { width: 2px; height: 12px; background: var(--border); margin-left: 13px; }
+
+    @media (max-width: 768px) {
+      .cs-stats { grid-template-columns: 1fr 1fr; }
+      .cs-before-after { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav><span class="nav-name">Het Shah</span></nav>
+
+  <div class="cs-wrap">
+
+    <a href="index.html" class="cs-back">← Back to portfolio</a>
+
+    <div class="fade-in">
+      <div class="cs-eyebrow">Goldman Sachs · Associate PM · 2022 – 2024</div>
+      <h1 class="cs-title">Real-Time Risk. $1.2B Freed.</h1>
+      <p class="cs-subtitle">Regulators required Goldman to hold extra capital because risk was calculated two days after trades settled. I built the pipeline to generate risk in real time, at end of day, so that capital buffer was no longer needed.</p>
+    </div>
+
+    <div class="cs-meta fade-in">
+      <div>
+        <div class="cs-meta-label">Team</div>
+        <div class="cs-meta-value">Risk Engineering</div>
+      </div>
+      <div>
+        <div class="cs-meta-label">Scope</div>
+        <div class="cs-meta-value">10+ regions, multiple business lines</div>
+      </div>
+      <div>
+        <div class="cs-meta-label">Impact</div>
+        <div class="cs-meta-value">$1.2B capital released · $25M annual P&L</div>
+      </div>
+      <div>
+        <div class="cs-meta-label">Stack</div>
+        <div class="cs-tools">
+          <span class="cs-tool">SQL</span>
+          <span class="cs-tool">REST APIs</span>
+          <span class="cs-tool">Risk Systems</span>
+          <span class="cs-tool">Jira</span>
+          <span class="cs-tool">Data Pipelines</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="cs-section fade-in">
+      <h2 class="cs-section-title">The Problem</h2>
+      <p class="cs-text">Goldman's risk pipelines were slow. Trades would come in from dozens of business lines across the globe, each with their own systems and data formats, and by the time everything was collected, normalised, and processed, two days had passed. The firm was generating risk reports for trades that had already happened 48 hours ago.</p>
+      <p class="cs-text">Regulators saw this lag and required Goldman to hold additional capital as a buffer against that two-day window of uncertainty. That buffer sat at $1.2B — capital that was not working, not generating returns, just parked there because the firm could not show regulators an accurate same-day risk picture.</p>
+      <p class="cs-text">The fix sounds straightforward: speed up the pipelines. The execution was anything but. Trades came from dozens of different business lines, each running their own systems on their own schedules. Getting all of them to emit data fast enough to support same-day risk generation required rebuilding pipelines that nobody had touched in years, across teams that had no direct incentive to change.</p>
+    </div>
+
+    <div class="cs-divider"></div>
+
+    <div class="cs-section fade-in">
+      <h2 class="cs-section-title">Before and After</h2>
+
+      <div class="cs-before-after">
+        <div class="cs-ba-card">
+          <div class="cs-ba-label before">Before</div>
+          <div class="cs-ba-title">T+2 Risk Generation</div>
+          <div class="cs-ba-desc">Risk calculated two days after trades. Regulators required $1.2B capital buffer to cover the uncertainty window. Risk managers working with stale data. No real-time monitoring or limit breach alerting.</div>
+        </div>
+        <div class="cs-ba-card">
+          <div class="cs-ba-label after">After</div>
+          <div class="cs-ba-title">Same-Day Risk Generation</div>
+          <div class="cs-ba-desc">Risk calculated at end of same day trades execute. Capital buffer released. Risk managers with a live dashboard showing current exposure, limit utilisation, and breach alerts in real time.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cs-divider"></div>
+
+    <div class="cs-section fade-in">
+      <h2 class="cs-section-title">What I Built</h2>
+      <p class="cs-text">The project had two distinct parts. First, building the data pipeline that could source trade data in real time from every business line. Second, building the risk manager tool that consumed that data and gave users something they could actually act on.</p>
+
+      <div class="cs-pipeline">
+        <div class="cs-pipeline-step">
+          <div class="cs-pipeline-num">1</div>
+          <div class="cs-pipeline-content">
+            <div class="cs-pipeline-title">Business team discovery</div>
+            <div class="cs-pipeline-desc">Worked with trading, secured financing, and other business lines across 10+ regions to map out every data source. Each had different systems, different formats, different latencies.</div>
+          </div>
+        </div>
+        <div class="cs-pipeline-line"></div>
+        <div class="cs-pipeline-step">
+          <div class="cs-pipeline-num">2</div>
+          <div class="cs-pipeline-content">
+            <div class="cs-pipeline-title">Upstream pipeline uplift</div>
+            <div class="cs-pipeline-desc">Worked with each business tech team to upgrade their data pipelines so trades could be emitted in real time rather than in overnight batch jobs. This required buy-in from teams who had no direct incentive to change systems that were working fine for them.</div>
+          </div>
+        </div>
+        <div class="cs-pipeline-line"></div>
+        <div class="cs-pipeline-step">
+          <div class="cs-pipeline-num">3</div>
+          <div class="cs-pipeline-content">
+            <div class="cs-pipeline-title">Risk pipeline uplift</div>
+            <div class="cs-pipeline-desc">Upgraded our own risk calculation pipeline to consume the real-time trade feeds and generate risk positions continuously throughout the trading day rather than as an overnight batch.</div>
+          </div>
+        </div>
+        <div class="cs-pipeline-line"></div>
+        <div class="cs-pipeline-step">
+          <div class="cs-pipeline-num">4</div>
+          <div class="cs-pipeline-content">
+            <div class="cs-pipeline-title">Risk manager dashboard</div>
+            <div class="cs-pipeline-desc">Built a tool for risk managers to see current exposure, monitor against limits, receive alerts on limit breaches, and manage approval workflows. The pipeline was the foundation but this was where users actually lived.</div>
+          </div>
+        </div>
+        <div class="cs-pipeline-line"></div>
+        <div class="cs-pipeline-step">
+          <div class="cs-pipeline-num">5</div>
+          <div class="cs-pipeline-content">
+            <div class="cs-pipeline-title">Regulatory sign-off</div>
+            <div class="cs-pipeline-desc">Worked with compliance and presented the methodology to regulators to demonstrate same-day risk generation was accurate enough to remove the capital buffer requirement.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cs-divider"></div>
+
+    <div class="cs-section fade-in">
+      <h2 class="cs-section-title">The PM Challenge</h2>
+      <p class="cs-text">The engineering was hard. The product management was harder. This was not a project where someone handed me a spec and said build it. I had to figure out what to build, convince people who had no obligation to help me to help me, sequence work across three continents, and make tradeoff calls with incomplete information throughout.</p>
+
+      <div class="cs-learnings">
+        <div class="cs-learning">
+          <strong>Mapping the stakeholder landscape</strong>
+          Before writing a single requirement I spent the first month just talking to people. Trading teams in New York, secured financing in London, equity derivatives in Hong Kong. Risk managers in each region who would eventually use the tool. Compliance and legal who would have to sign off on the methodology. Each group had different priorities, different concerns, and different definitions of what success looked like. Getting alignment across all of them was the actual job.
+        </div>
+        <div class="cs-learning">
+          <strong>The prioritisation problem</strong>
+          We could not uplift every business line at once. I had to sequence which upstream teams went first based on three factors: volume of trades they generated, complexity of their existing pipeline, and their willingness to engage. Americas trading went first because of volume. Asia came second despite more complexity because the regional lead was genuinely bought in. Europe was last because their system had the most legacy debt and needed a longer runway. Getting that sequencing wrong would have killed the project.
+        </div>
+        <div class="cs-learning">
+          <strong>What user research with risk managers actually changed</strong>
+          My initial dashboard design was built around what I thought risk managers needed: accurate numbers as fast as possible. When I finally did structured sessions with them, I learned the numbers were almost secondary. What they actually needed was workflow. When a limit breach happened at 3pm in London, who saw it, who had to approve an exception, and how did that get documented for the regulator? I had built a monitoring tool. They needed a workflow tool. That realisation reshaped the second half of the project.
+        </div>
+        <div class="cs-learning">
+          <strong>Cutting scope to ship</strong>
+          The original roadmap included intraday risk updates every 15 minutes. After talking to risk managers it was clear they did not need intraday — they needed end of day but accurate. Cutting intraday took three months off the timeline and let us ship something that worked rather than something aspirational. That was the right call even though it felt like a retreat at the time.
+        </div>
+      </div>
+    </div>
+
+    <div class="cs-divider"></div>
+
+    <div class="cs-section fade-in">
+      <h2 class="cs-section-title">What Made It Hard</h2>
+      <div class="cs-learnings">
+        <div class="cs-learning">
+          <strong>Nobody wanted to change a working system</strong>
+          Every upstream team had batch pipelines that worked fine for their own purposes. Asking them to rebuild for real-time feeds was asking them to take on engineering risk for a benefit that showed up in someone else's P&L. Getting that work prioritised required a lot of stakeholder management across teams I had no authority over.
+        </div>
+        <div class="cs-learning">
+          <strong>10 regions, 10 different interpretations of the same requirement</strong>
+          What counted as a trade, how it was timestamped, what fields were available — all of this varied by region and by business line. Standardising that without breaking anything downstream took most of the early project time.
+        </div>
+        <div class="cs-learning">
+          <strong>Risk managers did not trust the new numbers at first</strong>
+          When we launched the real-time dashboard, risk managers compared it against the T+2 reports they were used to and flagged discrepancies. Most were explained by the fact that the real-time view was more accurate, not less. But earning that trust took months of side-by-side validation.
+        </div>
+        <div class="cs-learning">
+          <strong>Regulatory language is not engineering language</strong>
+          Translating what regulators needed into requirements engineering could actually build was a skill I had not expected to need. The compliance team and the engineering team were often talking past each other and I spent a lot of time in the middle.
+        </div>
+      </div>
+    </div>
+
+    <div class="cs-divider"></div>
+
+    <div class="cs-section fade-in">
+      <h2 class="cs-section-title">The Numbers</h2>
+      <div class="cs-stats">
+        <div class="cs-stat">
+          <div class="cs-stat-num">$1.2B</div>
+          <div class="cs-stat-label">capital buffer released after same-day risk achieved</div>
+        </div>
+        <div class="cs-stat">
+          <div class="cs-stat-num">$25M</div>
+          <div class="cs-stat-label">annual P&L impact from deploying that capital</div>
+        </div>
+        <div class="cs-stat">
+          <div class="cs-stat-num">T+0</div>
+          <div class="cs-stat-label">risk generation at end of same trading day, down from T+2</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cs-divider"></div>
+
+    <div class="cs-section fade-in">
+      <h2 class="cs-section-title">What I Took From This</h2>
+      <div class="cs-learnings">
+        <div class="cs-learning">
+          <strong>The technical problem was the easy part</strong>
+          The hard parts were organisational. Getting 10 business tech teams to prioritise work for a benefit they would not see, earning trust from risk managers who had used the old system for years, translating between regulatory and engineering language. None of that shows up in a requirements doc.
+        </div>
+        <div class="cs-learning">
+          <strong>Engineering background as a PM superpower</strong>
+          I could sit with a trading system's tech team and understand why their pipeline was structured the way it was. I could write precise data requirements that engineering did not have to interpret. That saved months across a project that ran for years.
+        </div>
+        <div class="cs-learning">
+          <strong>Users are not always who you think they are</strong>
+          The regulators were a key stakeholder but the daily users were risk managers. I spent the first few months focused on the pipeline and not enough time with risk managers. When I finally did systematic user research with them, it changed the dashboard significantly. I should have started there.
+        </div>
+      </div>
+    </div>
+
+    <div class="cs-cta fade-in">
+      <a href="index.html" class="btn">← Back to portfolio</a>
+    </div>
+
+  </div>
+
+  <script>
+    window.addEventListener('load', () => {
+      document.querySelectorAll('.fade-in').forEach(el => el.classList.add('visible'));
+    });
+  </script>
+
+</body>
+</html>
