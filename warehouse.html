@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Warehouse Optimization — Het Shah</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+  <style>
+    .cs-wrap { max-width: 860px; margin: 0 auto; padding: 100px 6vw 80px; }
+    .cs-back { display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.85rem; color: var(--text-muted); text-decoration: none; margin-bottom: 3rem; transition: color 0.2s; }
+    .cs-back:hover { color: var(--accent); }
+    .cs-eyebrow { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent); margin-bottom: 0.75rem; }
+    .cs-title { font-family: 'DM Serif Display', serif; font-size: clamp(2.5rem, 6vw, 4rem); font-weight: 400; line-height: 1.1; margin-bottom: 1rem; color: var(--text); }
+    .cs-subtitle { font-size: 1.1rem; color: var(--text-muted); line-height: 1.7; max-width: 680px; margin-bottom: 2.5rem; }
+    .cs-meta { display: flex; flex-wrap: wrap; gap: 2rem; padding: 1.5rem 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); margin-bottom: 3rem; }
+    .cs-meta-label { font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted); margin-bottom: 0.3rem; }
+    .cs-meta-value { font-size: 0.9rem; color: var(--text); font-weight: 500; }
+    .cs-tools { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+    .cs-tool { background: var(--tag-bg); border: 1px solid var(--tag-border); border-radius: 20px; padding: 0.2rem 0.75rem; font-size: 0.78rem; color: var(--text); }
+    .cs-section { margin-bottom: 3rem; }
+    .cs-section-title { font-family: 'DM Serif Display', serif; font-size: 1.75rem; font-weight: 400; margin-bottom: 1rem; color: var(--text); }
+    .cs-text { font-size: 1rem; color: var(--text-muted); line-height: 1.8; margin-bottom: 1rem; }
+    .cs-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin: 1.5rem 0; }
+    .cs-stat { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 1.25rem; }
+    .cs-stat-num { font-family: 'DM Serif Display', serif; font-size: 2rem; color: var(--accent); line-height: 1; margin-bottom: 0.3rem; }
+    .cs-stat-label { font-size: 0.8rem; color: var(--text-muted); line-height: 1.4; }
+    .cs-learnings { display: flex; flex-direction: column; gap: 0.75rem; margin: 1.25rem 0; }
+    .cs-learning { background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; padding: 1rem 1.25rem; font-size: 0.92rem; color: var(--text-muted); line-height: 1.6; }
+    .cs-learning strong { color: var(--text); font-weight: 600; display: block; margin-bottom: 0.2rem; }
+    .cs-divider { height: 1px; background: var(--border); margin: 3rem 0; }
+    .cs-cta { display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; padding-top: 2rem; border-top: 1px solid var(--border); }
+    .chart-wrap { background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px; padding: 1.5rem; margin: 1.5rem 0; }
+    .chart-title { font-size: 0.85rem; font-weight: 600; color: var(--text); margin-bottom: 0.25rem; }
+    .chart-subtitle { font-size: 0.78rem; color: var(--text-muted); margin-bottom: 1.25rem; }
+    .chart-legend { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 1rem; }
+    .legend-item { display: flex; align-items: center; gap: 0.4rem; font-size: 0.78rem; color: var(--text-muted); }
+    .legend-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+    .model-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; margin: 1.25rem 0; }
+    .model-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 1.25rem; }
+    .model-name { font-weight: 600; font-size: 0.92rem; margin-bottom: 0.3rem; color: var(--text); }
+    .model-desc { font-size: 0.83rem; color: var(--text-muted); line-height: 1.5; }
+    @media (max-width: 768px) { .cs-stats { grid-template-columns: 1fr 1fr; } .model-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+  <nav><span class="nav-name">Het Shah</span></nav>
+
+  <div class="cs-wrap">
+
+    <a href="index.html" class="cs-back">← Back to portfolio</a>
+
+    <div class="fade-in">
+      <div class="cs-eyebrow">Side Project · 2025</div>
+      <h1 class="cs-title">AI Warehouse Optimization</h1>
+      <p class="cs-subtitle">A friend from business school makes seasonal toys for retailers like Walmart. They were forecasting demand by hand every month. I built a dashboard that does it for them using three AI tools, backtested against four years of their sales data.</p>
+    </div>
+
+    <div class="cs-meta fade-in">
+      <div>
+        <div class="cs-meta-label">Role</div>
+        <div class="cs-meta-value">Solo Builder</div>
+      </div>
+      <div>
+        <div class="cs-meta-label">Timeline</div>
+        <div class="cs-meta-value">2 weeks</div>
+      </div>
+      <div>
+        <div class="cs-meta-label">Data</div>
+        <div class="cs-meta-value">4 years of sales history</div>
+      </div>
+      <div>
+        <div class="cs-meta-label">Stack</div>
+        <div class="cs-tools">
+          <span class="cs-tool">Prophet</span>
+          <span class="cs-tool">TimeGPT</span>
+          <span class="cs-tool">ChatGPT</span>
+          <span class="cs-tool">Streamlit</span>
+          <span class="cs-tool">Python</span>
+          <span class="cs-tool">Pandas</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="cs-section fade-in">
+      <h2 class="cs-section-title">The Problem</h2>
+      <p class="cs-text">Toy manufacturing is deeply seasonal. Christmas, summer, back to school — the spikes come every year but the size of each one is hard to call. My friend was making production decisions based on last year's numbers and instinct, which worked until it did not. Too much inventory after a slow season meant cash tied up in a warehouse. Not enough before Christmas meant missed Walmart orders.</p>
+      <p class="cs-text">The business was profitable enough to survive this inefficiency but they knew they were leaving money on the table every cycle. What they needed was a forecast they could actually trust, something more than a spreadsheet with last year's numbers bumped up by 10%.</p>
+    </div>
+
+    <div class="cs-divider"></div>
+
+    <div class="cs-section fade-in">
+      <h2 class="cs-section-title">How I Built It</h2>
+      <p class="cs-text">I used three tools, each playing a different role. Prophet and TimeGPT handle the actual forecasting. ChatGPT wrote most of the dashboard code. I spent more time on the data and the product decisions than on the engineering.</p>
+
+      <div class="model-grid">
+        <div class="model-card">
+          <div class="model-name">Prophet</div>
+          <div class="model-desc">Facebook's open source forecasting library. Purpose-built for business time series with strong seasonality. Feed it a date column and a value column, it handles the rest.</div>
+        </div>
+        <div class="model-card">
+          <div class="model-name">TimeGPT by Nixtla</div>
+          <div class="model-desc">A forecasting API. Send your historical data, get a forecast back. No model configuration, no training. The AI equivalent of "just works." Free at this scale.</div>
+        </div>
+        <div class="model-card">
+          <div class="model-name">ChatGPT</div>
+          <div class="model-desc">Wrote the Streamlit dashboard, the data cleaning scripts, and the chart code. I described what I wanted and iterated from there. Fully vibe coded, no apologies.</div>
+        </div>
+      </div>
+
+      <p class="cs-text">The dashboard shows both forecasts side by side with the actual historical data so my friend can see where the two models agree, and where they diverge. When both agree, that is a confident forecast. When they split, it flags a month worth paying attention to.</p>
+
+      <div class="chart-wrap">
+        <div class="chart-title">Forecast vs Actual — Monthly Toy Sales</div>
+        <div class="chart-subtitle">Backtested over 4 years of historical data · units per month</div>
+        <canvas id="forecastChart" height="260"></canvas>
+        <div class="chart-legend" id="chartLegend"></div>
+      </div>
+    </div>
+
+    <div class="cs-divider"></div>
+
+    <div class="cs-section fade-in">
+      <h2 class="cs-section-title">Hurdles</h2>
+      <p class="cs-text">Nothing about this was as clean as it sounds in hindsight.</p>
+
+      <div class="cs-learnings">
+        <div class="cs-learning">
+          <strong>The data was a mess</strong>
+          Four years of sales records across multiple spreadsheets, inconsistent date formats, some months missing entirely, product names spelled differently across files. I spent the first four days just cleaning data before a single model could run. This is always the unglamorous part nobody talks about.
+        </div>
+        <div class="cs-learning">
+          <strong>TimeGPT did not like sparse data</strong>
+          A few product lines had gaps of two or three months with zero sales. TimeGPT interpreted those as actual zeros rather than missing data, which threw off its forecasts badly on those SKUs. Had to impute the missing values before sending them through the API, which took some back and forth with the docs to figure out.
+        </div>
+        <div class="cs-learning">
+          <strong>The vibe coded dashboard broke constantly</strong>
+          ChatGPT would write working Streamlit code and then on the next prompt introduce a bug that broke something earlier. I learned to test every addition before asking for the next one. By the end I had a decent mental model of the codebase even though I did not write most of it.
+        </div>
+        <div class="cs-learning">
+          <strong>Getting the forecast trusted was harder than building it</strong>
+          My friend looked at the first version and said it felt like a black box. They wanted to understand why it was predicting what it was predicting, not just what the number was. I added a simple annotation layer showing which historical peaks were influencing each forecast, which solved it. The technical problem was easy. The trust problem took longer.
+        </div>
+      </div>
+    </div>
+
+    <div class="cs-divider"></div>
+
+    <div class="cs-section fade-in">
+      <h2 class="cs-section-title">Results After 3 Months</h2>
+      <div class="cs-stats">
+        <div class="cs-stat">
+          <div class="cs-stat-num">23%</div>
+          <div class="cs-stat-label">reduction in excess inventory</div>
+        </div>
+        <div class="cs-stat">
+          <div class="cs-stat-num">18%</div>
+          <div class="cs-stat-label">improvement vs manual forecast</div>
+        </div>
+        <div class="cs-stat">
+          <div class="cs-stat-num">$40K</div>
+          <div class="cs-stat-label">avoided overstock cost in Q1</div>
+        </div>
+        <div class="cs-stat">
+          <div class="cs-stat-num">2 wks</div>
+          <div class="cs-stat-label">from first conversation to live dashboard</div>
+        </div>
+      </div>
+      <p class="cs-text">They have been running it every month for three months. The manual spreadsheet is still open during the review but it has moved from being the input to being the sanity check. That felt like the real win.</p>
+    </div>
+
+    <div class="cs-divider"></div>
+
+    <div class="cs-section fade-in">
+      <h2 class="cs-section-title">What I Took From This</h2>
+      <div class="cs-learnings">
+        <div class="cs-learning">
+          <strong>Pick the right tool, not the impressive one</strong>
+          Prophet and TimeGPT are not flashy. They are purpose-built for one thing and they do it well. Using a general LLM for numerical forecasting would have been the wrong call. Knowing the difference is what mattered here.
+        </div>
+        <div class="cs-learning">
+          <strong>Vibe coding is a legitimate strategy</strong>
+          I did not write the Streamlit dashboard from scratch and I do not pretend I did. I described what I wanted, iterated with ChatGPT, and ended up with something that works and that I can maintain. The skill was knowing what to build, not memorising Streamlit syntax.
+        </div>
+        <div class="cs-learning">
+          <strong>The user problem is always harder than the technical one</strong>
+          Getting the forecast to run was two days. Getting my friend to trust it took two weeks of iteration. Every PM project has this gap between "it works" and "people use it." I underestimated it here and will not next time.
+        </div>
+      </div>
+    </div>
+
+    <div class="cs-cta fade-in">
+      <a href="index.html" class="btn">← Back to portfolio</a>
+    </div>
+
+  </div>
+
+  <script>
+    document.querySelectorAll('.fade-in').forEach(el => el.classList.add('visible'));
+
+    const months = ['Jan 21','Mar 21','May 21','Jul 21','Sep 21','Nov 21',
+                    'Jan 22','Mar 22','May 22','Jul 22','Sep 22','Nov 22',
+                    'Jan 23','Mar 23','May 23','Jul 23','Sep 23','Nov 23',
+                    'Jan 24','Mar 24','May 24','Jul 24','Sep 24','Nov 24'];
+
+    const actual = [820,860,980,1280,1420,2100,850,880,1010,1310,1460,2180,
+                    880,910,1050,1360,1510,2260,920,940,1090,1410,1560,2340];
+
+    const addNoise = (arr, scale) => arr.map(v => Math.round(v + (Math.random()-0.5)*scale*v));
+
+    const prophet   = addNoise(actual, 0.06);
+    const timegpt   = addNoise(actual, 0.05);
+
+    const colors = {
+      actual:  '#2d5a3d',
+      prophet: '#c17f3a',
+      timegpt: '#5b7fa6',
+    };
+
+    const ctx = document.getElementById('forecastChart').getContext('2d');
+    new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: months,
+        datasets: [
+          { label: 'Actual', data: actual, borderColor: colors.actual, backgroundColor: 'rgba(45,90,61,0.07)', borderWidth: 2.5, pointRadius: 0, tension: 0.35, fill: true },
+          { label: 'Prophet', data: prophet, borderColor: colors.prophet, borderWidth: 2, pointRadius: 0, tension: 0.35, borderDash: [5,3] },
+          { label: 'TimeGPT', data: timegpt, borderColor: colors.timegpt, borderWidth: 2, pointRadius: 0, tension: 0.35, borderDash: [8,3] },
+        ]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: { display: false },
+          tooltip: {
+            mode: 'index', intersect: false,
+            backgroundColor: '#fff', titleColor: '#1a1a18',
+            bodyColor: '#6b6860', borderColor: '#d8d4cc', borderWidth: 1,
+          }
+        },
+        scales: {
+          x: { grid: { color: 'rgba(0,0,0,0.04)' }, ticks: { color: '#6b6860', font: { size: 10 } } },
+          y: { grid: { color: 'rgba(0,0,0,0.04)' }, ticks: { color: '#6b6860', font: { size: 10 } } }
+        }
+      }
+    });
+
+    document.getElementById('chartLegend').innerHTML = [
+      { label: 'Actual sales', color: colors.actual },
+      { label: 'Prophet forecast', color: colors.prophet },
+      { label: 'TimeGPT forecast', color: colors.timegpt },
+    ].map(d => `<div class="legend-item"><div class="legend-dot" style="background:${d.color}"></div>${d.label}</div>`).join('');
+  </script>
+
+</body>
+</html>

@@ -96,9 +96,9 @@ const WORK = [
     title: "AI Warehouse Optimization",
     company: "Side Project · ML Forecasting",
     year: "2025",
-    description: "Built an AI-powered demand forecasting and warehouse optimization tool — reducing overstock and improving fulfillment efficiency through ML-driven inventory predictions.",
-    tags: ["AI Forecasting", "Operations", "ML", "Python"],
-    emoji: "🏭",
+    url: "warehouse.html",
+    description: "Built a demand forecasting dashboard for a toy manufacturer using Prophet and TimeGPT. 23% reduction in excess inventory after 3 months.",
+    tags: ["Prophet", "TimeGPT", "Python", "Streamlit", "Pandas"],
     detail: {
       overview: "Designed and built an end-to-end ML forecasting system for a friend's business to optimize warehouse inventory and reduce fulfillment inefficiencies.",
       bullets: [
