@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Esusu — AI Mortgage Underwriting · Het Shah</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .cs-wrap { max-width: 860px; margin: 0 auto; padding: 100px 6vw 80px; }
+    .cs-back { display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.85rem; color: var(--text-muted); text-decoration: none; margin-bottom: 3rem; transition: color 0.2s; }
+    .cs-back:hover { color: var(--accent); }
+    .cs-eyebrow { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent); margin-bottom: 0.75rem; }
+    .cs-title { font-family: 'DM Serif Display', serif; font-size: clamp(2.5rem, 6vw, 4rem); font-weight: 400; line-height: 1.1; margin-bottom: 1rem; color: var(--text); }
+    .cs-subtitle { font-size: 1.1rem; color: var(--text-muted); line-height: 1.7; max-width: 680px; margin-bottom: 2.5rem; }
+    .cs-meta { display: flex; flex-wrap: wrap; gap: 2rem; padding: 1.5rem 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); margin-bottom: 3rem; }
+    .cs-meta-label { font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted); margin-bottom: 0.3rem; }
+    .cs-meta-value { font-size: 0.9rem; color: var(--text); font-weight: 500; }
+    .cs-tools { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+    .cs-tool { background: var(--tag-bg); border: 1px solid var(--tag-border); border-radius: 20px; padding: 0.2rem 0.75rem; font-size: 0.78rem; color: var(--text); }
+    .cs-section { margin-bottom: 3rem; }
+    .cs-section-title { font-family: 'DM Serif Display', serif; font-size: 1.75rem; font-weight: 400; margin-bottom: 1rem; color: var(--text); }
+    .cs-text { font-size: 1rem; color: var(--text-muted); line-height: 1.8; margin-bottom: 1rem; }
+    .cs-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin: 1.5rem 0; }
+    .cs-stat { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 1.25rem; }
+    .cs-stat-num { font-family: 'DM Serif Display', serif; font-size: 2rem; color: var(--accent); line-height: 1; margin-bottom: 0.3rem; }
+    .cs-stat-label { font-size: 0.8rem; color: var(--text-muted); line-height: 1.4; }
+    .cs-learnings { display: flex; flex-direction: column; gap: 0.75rem; margin: 1.25rem 0; }
+    .cs-learning { background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; padding: 1rem 1.25rem; font-size: 0.92rem; color: var(--text-muted); line-height: 1.6; }
+    .cs-learning strong { color: var(--text); font-weight: 600; display: block; margin-bottom: 0.2rem; }
+    .cs-divider { height: 1px; background: var(--border); margin: 3rem 0; }
+    .cs-cta { display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; padding-top: 2rem; border-top: 1px solid var(--border); }
+
+    /* Flow diagram */
+    .cs-flow { display: flex; align-items: center; gap: 0; margin: 1.5rem 0; flex-wrap: wrap; }
+    .cs-flow-step { background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; padding: 1rem 1.25rem; font-size: 0.85rem; color: var(--text); text-align: center; flex: 1; min-width: 140px; }
+    .cs-flow-step-label { font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.3rem; }
+    .cs-flow-step-title { font-weight: 600; font-size: 0.88rem; color: var(--text); }
+    .cs-flow-arrow { font-size: 1.2rem; color: var(--border); padding: 0 0.5rem; flex-shrink: 0; }
+
+    /* Two path cards */
+    .cs-paths { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1.25rem 0; }
+    .cs-path { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 1.25rem; }
+    .cs-path-label { font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); margin-bottom: 0.4rem; }
+    .cs-path-title { font-weight: 600; font-size: 0.95rem; margin-bottom: 0.5rem; color: var(--text); }
+    .cs-path-desc { font-size: 0.85rem; color: var(--text-muted); line-height: 1.55; }
+
+    @media (max-width: 768px) {
+      .cs-stats { grid-template-columns: 1fr 1fr; }
+      .cs-paths { grid-template-columns: 1fr; }
+      .cs-flow { flex-direction: column; }
+      .cs-flow-arrow { transform: rotate(90deg); }
+    }
+  </style>
+</head>
+<body>
+
+  <nav><span class="nav-name">Het Shah</span></nav>
+
+  <div class="cs-wrap">
+
+    <a href="index.html" class="cs-back">← Back to portfolio</a>
+
+    <div class="fade-in">
+      <div class="cs-eyebrow">Esusu · PM Intern · Summer 2025</div>
+      <h1 class="cs-title">Unlocking Homeownership for Renters</h1>
+      <p class="cs-subtitle">Esusu helps renters build credit by reporting on-time rent payments to credit bureaus. I was brought in to answer the next question: now that we have this rental data, what else can we do with it? The answer was mortgages.</p>
+    </div>
+
+    <div class="cs-meta fade-in">
+      <div>
+        <div class="cs-meta-label">Role</div>
+        <div class="cs-meta-value">Product Manager Intern</div>
+      </div>
+      <div>
+        <div class="cs-meta-label">Team</div>
+        <div class="cs-meta-value">Risk, Compliance, Engineering, Lending Partners</div>
+      </div>
+      <div>
+        <div class="cs-meta-label">Outcome</div>
+        <div class="cs-meta-value">22% pilot-to-contract conversion lift</div>
+      </div>
+      <div>
+        <div class="cs-meta-label">Tools</div>
+        <div class="cs-tools">
+          <span class="cs-tool">SQL</span>
+          <span class="cs-tool">Plaid API</span>
+          <span class="cs-tool">Figma</span>
+          <span class="cs-tool">Jira</span>
+          <span class="cs-tool">Fannie Mae Guidelines</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Context -->
+    <div class="cs-section fade-in">
+      <h2 class="cs-section-title">Where Esusu Started</h2>
+      <p class="cs-text">Esusu's core insight was simple: millions of Americans pay rent on time every month and get zero credit for it. Credit scores are built on credit cards, auto loans, and mortgages — none of which renters necessarily have. So Esusu built a platform that reports rental payments to Equifax, Experian, and TransUnion, giving tenants a credit history they could not get anywhere else.</p>
+      <p class="cs-text">They sell this two ways. Directly to tenants who sign up themselves, and to property management companies whose building owners want tenants to have an incentive to pay on time. Phase 1 was working. Esusu had a growing dataset of verified, on-time rental payment histories across thousands of tenants.</p>
+      <p class="cs-text">Phase 2 was my assignment: these tenants eventually want to buy a home. Can we use this rental history data to actually help them get a mortgage?</p>
+    </div>
+
+    <div class="cs-divider"></div>
+
+    <!-- The problem -->
+    <div class="cs-section fade-in">
+      <h2 class="cs-section-title">The Problem Worth Solving</h2>
+      <p class="cs-text">Traditional mortgage underwriting relies heavily on credit score, which is exactly what Esusu's users are trying to build. A tenant who has paid $2,400 in rent on time every month for three years is demonstrably creditworthy, but a conventional underwriting model might still reject them because their FICO score is thin.</p>
+      <p class="cs-text">Fannie Mae and Freddie Mac, the two entities that back most US mortgages, had recently started allowing rental payment history as a supplemental data point in underwriting decisions. The door was open. The question was whether Esusu could walk through it.</p>
+
+      <div class="cs-flow fade-in">
+        <div class="cs-flow-step">
+          <div class="cs-flow-step-label">Today</div>
+          <div class="cs-flow-step-title">Thin credit renter pays on time</div>
+        </div>
+        <div class="cs-flow-arrow">→</div>
+        <div class="cs-flow-step">
+          <div class="cs-flow-step-label">Esusu Phase 1</div>
+          <div class="cs-flow-step-title">Rental history reported to bureaus</div>
+        </div>
+        <div class="cs-flow-arrow">→</div>
+        <div class="cs-flow-step">
+          <div class="cs-flow-step-label">Phase 2 (my work)</div>
+          <div class="cs-flow-step-title">Rental history used in mortgage underwriting</div>
+        </div>
+        <div class="cs-flow-arrow">→</div>
+        <div class="cs-flow-step">
+          <div class="cs-flow-step-label">Outcome</div>
+          <div class="cs-flow-step-title">Renter becomes homeowner</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cs-divider"></div>
+
+    <!-- Two paths -->
+    <div class="cs-section fade-in">
+      <h2 class="cs-section-title">Two Paths to the Same Goal</h2>
+      <p class="cs-text">Early in the project I mapped out two distinct approaches to getting rental data into mortgage underwriting decisions. Both had merit and different tradeoffs on speed, data quality, and lender adoption.</p>
+
+      <div class="cs-paths">
+        <div class="cs-path">
+          <div class="cs-path-label">Path A</div>
+          <div class="cs-path-title">Use Esusu's existing tenant data</div>
+          <div class="cs-path-desc">Esusu already had verified rental histories for its existing users. Package this data and present it directly to lending partners as a supplemental underwriting input. Faster to market, but limited to current Esusu tenants.</div>
+        </div>
+        <div class="cs-path">
+          <div class="cs-path-label">Path B</div>
+          <div class="cs-path-title">AI-driven rental verification via Plaid</div>
+          <div class="cs-path-desc">Build an API-based verification layer using Plaid to pull bank statement data and verify rent payments for any applicant, not just existing Esusu users. Broader reach, higher data quality, but more complex to build and requires lender trust in the verification methodology.</div>
+        </div>
+      </div>
+
+      <p class="cs-text">I recommended pursuing both in parallel, with Path A as the near-term pilot to establish lender relationships, and Path B as the longer-term product that would make Esusu's underwriting tool available to any mortgage applicant in the country. The roadmap I built reflected this phasing.</p>
+    </div>
+
+    <div class="cs-divider"></div>
+
+    <!-- Plaid integration -->
+    <div class="cs-section fade-in">
+      <h2 class="cs-section-title">The Plaid Integration</h2>
+      <p class="cs-text">Path B required building a verification layer that could look at a bank statement and confirm: did this person pay rent on time, every month, for the past 12 to 24 months? Plaid's transaction API could pull this data with user consent. The challenge was turning raw transaction data into something a lender could trust.</p>
+      <p class="cs-text">I worked with engineering to define the data schema and wrote the requirements for how the system should classify transactions as rent payments, handle irregular amounts, and flag months where verification was inconclusive. Getting this right mattered because lenders would be making credit decisions based on it.</p>
+      <p class="cs-text">The compliance and legal constraints were the most time-consuming part. Every data handling decision touched fair lending law, and the requirements that came out of those conversations shaped what we could and could not build.</p>
+    </div>
+
+    <div class="cs-divider"></div>
+
+    <!-- Lender conversations -->
+    <div class="cs-section fade-in">
+      <h2 class="cs-section-title">Convincing Lenders</h2>
+      <p class="cs-text">Building the product was only half the job. The harder half was getting lending partners to agree to use rental history data in their underwriting decisions. Lenders are conservative by design. Anything outside the standard FICO-based model is a risk they have to justify to their own compliance teams.</p>
+
+      <div class="cs-learnings">
+        <div class="cs-learning">
+          <strong>The first objection was data quality</strong>
+          Lenders wanted to know how we verified that the payments in Esusu's system were accurate. I worked with our data team to pull together a validation study showing payment reconciliation rates and error margins, which addressed this directly.
+        </div>
+        <div class="cs-learning">
+          <strong>The second objection was regulatory exposure</strong>
+          Using alternative data in credit decisions has fair lending implications. I partnered with our legal team to document the methodology in a way that satisfied lenders' compliance requirements and aligned with Fannie Mae's published guidelines on rental data.
+        </div>
+        <div class="cs-learning">
+          <strong>The third objection was adoption cost</strong>
+          Lenders did not want to rebuild their systems to accept a new data input. I scoped the integration as a lightweight API call that could sit alongside their existing underwriting workflow without requiring a major technical lift on their end.
+        </div>
+      </div>
+
+      <p class="cs-text">By the end of the internship we had moved several lenders from initial conversation to signed pilot agreements. The 22% improvement in pilot-to-contract conversion came directly from addressing these objections with better data and cleaner integration docs.</p>
+    </div>
+
+    <div class="cs-divider"></div>
+
+    <!-- Results -->
+    <div class="cs-section fade-in">
+      <h2 class="cs-section-title">What Moved</h2>
+      <div class="cs-stats">
+        <div class="cs-stat">
+          <div class="cs-stat-num">22%</div>
+          <div class="cs-stat-label">improvement in pilot-to-contract conversion with lending partners</div>
+        </div>
+        <div class="cs-stat">
+          <div class="cs-stat-num">0→1</div>
+          <div class="cs-stat-label">product taken from concept to roadmap to pilot in one summer</div>
+        </div>
+        <div class="cs-stat">
+          <div class="cs-stat-num">3</div>
+          <div class="cs-stat-label">cross-functional teams aligned: Risk, Compliance, Engineering</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cs-divider"></div>
+
+    <!-- Takeaways -->
+    <div class="cs-section fade-in">
+      <h2 class="cs-section-title">What I Took From This</h2>
+      <div class="cs-learnings">
+        <div class="cs-learning">
+          <strong>The user is not always the one in the room</strong>
+          The end beneficiary here was a renter trying to buy a home. But my immediate customer was a mortgage lender. Understanding that distinction, and building the product to serve both, was the central challenge of the role.
+        </div>
+        <div class="cs-learning">
+          <strong>Regulated industries move at a different pace</strong>
+          Every product decision touched compliance. I learned to bring legal and risk into conversations early rather than treating them as gates at the end. It made the work slower at first and much faster overall.
+        </div>
+        <div class="cs-learning">
+          <strong>A good roadmap is a sales document</strong>
+          The roadmap I built for this product was used in lender conversations. It had to be technically credible to engineering, commercially compelling to lenders, and legally defensible to compliance. Writing for all three audiences at once is a skill I did not expect to develop in a PM internship.
+        </div>
+      </div>
+    </div>
+
+    <div class="cs-cta fade-in">
+      <a href="index.html" class="btn">← Back to portfolio</a>
+    </div>
+
+  </div>
+
+  <script>
+    window.addEventListener('load', () => {
+      document.querySelectorAll('.fade-in').forEach(el => el.classList.add('visible'));
+    });
+  </script>
+
+</body>
+</html>
