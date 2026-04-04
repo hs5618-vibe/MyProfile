@@ -31,7 +31,6 @@ const WORK = [
     title: "AI Mortgage Underwriting",
     company: "Esusu · PM Intern",
     year: "2025",
-    url: "esusu.html",
     description: "Owned 0→1 strategy for an AI-powered mortgage underwriting product leveraging verified rental cash-flow data. Improved pilot-to-contract conversion by 22%.",
     tags: ["0→1 Product", "Fintech", "SQL", "AI/ML", "Roadmapping"],
     stats: [
@@ -55,7 +54,6 @@ const WORK = [
     title: "Capital Optimization Platform",
     company: "Goldman Sachs · Associate PM",
     year: "2022 – 2024",
-    url: "goldman.html",
     description: "Led a firmwide, multi-quarter capital optimization initiative across trading and secured financing businesses, improving capital buffer efficiency by $1.2B.",
     tags: ["Enterprise PM", "Capital Markets", "Experimentation", "SQL", "10+ Regions"],
     stats: [
@@ -78,7 +76,7 @@ const WORK = [
     id: "awaydays",
     title: "AwayDayz NYC",
     company: "Side Project · Soccer Matchday Guide",
-    year: "2026 – Present",
+    year: "2024 – Present",
     url: "awaydays.html",
     description: "Built a two-sided platform connecting NYC soccer fans with bars showing their team's game. 15 bars onboarded, 188 matches listed across 6 leagues.",
     tags: ["0→1 Product", "Marketplace", "React", "Node.js", "Supabase"],
@@ -99,8 +97,8 @@ const WORK = [
     company: "Side Project · ML Forecasting",
     year: "2025",
     url: "warehouse.html",
-    description: "Built a demand forecasting dashboard for a toy manufacturer using Prophet and TimeGPT. 23% reduction in excess inventory after 3 months.",
-    tags: ["Prophet", "TimeGPT", "Python", "Streamlit", "Pandas"],
+    description: "Built a demand forecasting dashboard for a toy manufacturer, running 5 AI models against 4 years of sales data. 23% reduction in excess inventory after 3 months.",
+    tags: ["Python", "Prophet", "LSTM", "XGBoost", "Time Series"],
     detail: {
       overview: "Designed and built an end-to-end ML forecasting system for a friend's business to optimize warehouse inventory and reduce fulfillment inefficiencies.",
       bullets: [
@@ -204,6 +202,7 @@ const JOURNEY = [
     role: "Product Manager Intern",
     org: "Esusu · Credit-Building Fintech · New York",
     year: "Summer 2025",
+    url: "esusu.html",
     description: "Owned 0→1 AI mortgage underwriting product. Improved pilot-to-contract conversion by 22% using SQL analysis and user research.",
     tags: ["PM", "Fintech", "AI", "0→1"],
     detail: {
@@ -222,6 +221,7 @@ const JOURNEY = [
     role: "Associate · Product Manager",
     org: "Goldman Sachs · Bangalore",
     year: "2022 – 2024",
+    url: "goldman.html",
     description: "Led capital optimization initiative improving efficiency by $1.2B and ~$25M annual P&L. Designed experimentation frameworks accelerating insight generation by 32%.",
     tags: ["Capital Markets", "Enterprise PM", "Experimentation"],
     detail: {
