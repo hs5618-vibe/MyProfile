@@ -1,9 +1,7 @@
 // ─────────────────────────────────────────
 // data.js — ALL YOUR CONTENT LIVES HERE
-// Edit this file to update the site content
 // ─────────────────────────────────────────
 
-// Logo helper — using favicon/logo APIs that are reliably free
 const LOGOS = {
   nyu:        { src: "https://www.google.com/s2/favicons?domain=stern.nyu.edu&sz=64", alt: "NYU" },
   goldman:    { src: "https://www.google.com/s2/favicons?domain=goldmansachs.com&sz=64", alt: "Goldman Sachs" },
@@ -14,7 +12,6 @@ const LOGOS = {
   nyu_accel:  { src: "https://www.google.com/s2/favicons?domain=nyu.edu&sz=64", alt: "NYU AI Accelerator" },
 };
 
-// Ticker items — shown in the sliding bar
 const TICKER = [
   { name: "NYU Stern",                     logo: LOGOS.nyu },
   { name: "Goldman Sachs",                 logo: LOGOS.goldman },
@@ -27,63 +24,15 @@ const TICKER = [
 
 const WORK = [
   {
-    id: "esusu",
-    title: "AI Mortgage Underwriting",
-    company: "Esusu · PM Intern",
-    year: "2025",
-    description: "Owned 0→1 strategy for an AI-powered mortgage underwriting product leveraging verified rental cash-flow data. Improved pilot-to-contract conversion by 22%.",
-    tags: ["0→1 Product", "Fintech", "SQL", "AI/ML", "Roadmapping"],
-    stats: [
-      { num: "22%", label: "pilot-to-contract conversion lift" },
-      { num: "0→1", label: "product built from scratch" },
-      { num: "3", label: "cross-functional teams aligned" }
-    ],
-    detail: {
-      overview: "Led the full product lifecycle for Esusu's AI-powered mortgage underwriting product — from market research and competitive benchmarking through roadmap definition and partner alignment.",
-      bullets: [
-        "Defined product vision and roadmap aligned with compliance and lending partner requirements",
-        "Built competitive landscape benchmarking alternative income verification, embedded finance, and neobank models",
-        "Used SQL-driven analysis and user feedback to validate assumptions and prioritize features",
-        "Partnered with Risk, Compliance, and external mortgage lenders to design scalable underwriting decision frameworks",
-        "Translated regulatory and business constraints into clear engineering requirements"
-      ]
-    }
-  },
-  {
-    id: "goldman",
-    title: "Capital Optimization Platform",
-    company: "Goldman Sachs · Associate PM",
-    year: "2022 – 2024",
-    description: "Led a firmwide, multi-quarter capital optimization initiative across trading and secured financing businesses, improving capital buffer efficiency by $1.2B.",
-    tags: ["Enterprise PM", "Capital Markets", "Experimentation", "SQL", "10+ Regions"],
-    stats: [
-      { num: "$1.2B", label: "capital buffer efficiency improved" },
-      { num: "$25M", label: "annual P&L impact" },
-      { num: "32%", label: "faster insight generation" }
-    ],
-    detail: {
-      overview: "Owned end-to-end strategic workstreams across Goldman Sachs' trading and secured financing businesses, driving one of the firm's largest capital efficiency initiatives.",
-      bullets: [
-        "Drove ~$25M in annual P&L impact through capital buffer efficiency improvements",
-        "Coordinated Risk, Trading, Legal, Compliance, and Engineering across 10+ regions",
-        "Designed experimentation frameworks accelerating insight generation by 32% and improving adoption of new capital strategies",
-        "Supported cross-border regulatory execution during Goldman Sachs' China entity acquisition",
-        "Reduced manual effort by 30% through benchmarking and automation improvements"
-      ]
-    }
-  },
-  {
     id: "awaydays",
     title: "AwayDayz NYC",
     company: "Side Project · Soccer Matchday Guide",
-    year: "2024 – Present",
+    year: "2025 – Present",
     url: "awaydays.html",
     description: "Built a two-sided platform connecting NYC soccer fans with bars showing their team's game. 15 bars onboarded, 188 matches listed across 6 leagues.",
     tags: ["0→1 Product", "Marketplace", "React", "Node.js", "Supabase"],
-    emoji: "⚽",
-    caseStudy: "awaydays.html",
     detail: {
-      overview: "A passion project born from the NYC soccer scene — built to help away fans navigate the city on matchday. Aggregates pub guides, supporter culture, and event info in one place.",
+      overview: "A passion project born from the NYC soccer scene — built to help away fans navigate the city on matchday.",
       bullets: [
         "Identified gap in existing soccer fan platforms for away matchday planning",
         "Built full product from concept to launch — design, content, and distribution",
@@ -97,14 +46,14 @@ const WORK = [
     company: "Side Project · ML Forecasting",
     year: "2025",
     url: "warehouse.html",
-    description: "Built a demand forecasting dashboard for a toy manufacturer, running 5 AI models against 4 years of sales data. 23% reduction in excess inventory after 3 months.",
-    tags: ["Python", "Prophet", "LSTM", "XGBoost", "Time Series"],
+    description: "Built a demand forecasting dashboard for a toy manufacturer using Prophet and TimeGPT. 23% reduction in excess inventory after 3 months.",
+    tags: ["Prophet", "TimeGPT", "Python", "Streamlit", "Pandas"],
     detail: {
       overview: "Designed and built an end-to-end ML forecasting system for a friend's business to optimize warehouse inventory and reduce fulfillment inefficiencies.",
       bullets: [
-        "Analyzed historical sales data to build demand forecasting models",
-        "Reduced overstock by identifying slow-moving SKUs and seasonal demand patterns",
-        "Delivered recommendations via a simple dashboard the business owner could act on"
+        "Analyzed 4 years of historical sales data to build demand forecasting models",
+        "Used Prophet and TimeGPT to generate and compare forecasts",
+        "Delivered recommendations via a Streamlit dashboard"
       ]
     }
   }
@@ -179,20 +128,21 @@ const SKILLS = [
 
 const JOURNEY = [
   {
-    logo: LOGOS.nyu,
-    abbr: "NYU",
-    role: "MBA Candidate",
-    org: "NYU Stern School of Business · Strategy, Product Management & Finance",
-    year: "2024 – 2026",
-    description: "GMAT 750 (98th percentile) · Dean's List · Microsoft AI Hackathon runners-up. Developed AI-driven platform to record and optimize employee workflows.",
-    tags: ["MBA", "Strategy", "Product Management", "Finance"],
+    logo: LOGOS.goldman,
+    abbr: "GS",
+    role: "Software Engineer & Product Manager",
+    org: "Goldman Sachs · Bangalore",
+    year: "2019 – 2024",
+    url: "goldman.html",
+    description: "Started as a software engineer building risk systems, then grew into product management. Led capital optimization initiative improving efficiency by $1.2B with ~$25M annual P&L impact across 10+ regions.",
+    tags: ["Software Engineering", "PM", "Capital Markets", "SQL", "Risk"],
     detail: {
-      overview: "Pursuing MBA at NYU Stern with specialization in Strategy, Product Management, and Finance.",
+      overview: "5 years at Goldman Sachs spanning software engineering and product management.",
       bullets: [
-        "GMAT 750 — 98th percentile",
-        "Dean's List honoree",
-        "Microsoft AI Hackathon — Runners-up: built AI-driven platform to record and optimize employee workflows",
-        "VP positions in Stern Technology Association, Asian Business Society, and Arts, Culture & Cuisine Club"
+        "Built and redesigned global risk assessment workflows, reducing cycle time from 8 hours to 2 hours",
+        "Grew into PM role leading firmwide capital optimization across 10+ regions",
+        "Improved capital buffer efficiency by $1.2B with ~$25M annual P&L impact",
+        "Supported Goldman Sachs' China entity acquisition with cross-border regulatory execution"
       ]
     }
   },
@@ -216,38 +166,20 @@ const JOURNEY = [
     }
   },
   {
-    logo: LOGOS.goldman,
-    abbr: "GS",
-    role: "Associate · Product Manager",
-    org: "Goldman Sachs · Bangalore",
-    year: "2022 – 2024",
-    url: "goldman.html",
-    description: "Led capital optimization initiative improving efficiency by $1.2B and ~$25M annual P&L. Designed experimentation frameworks accelerating insight generation by 32%.",
-    tags: ["Capital Markets", "Enterprise PM", "Experimentation"],
+    logo: LOGOS.nyu,
+    abbr: "NYU",
+    role: "MBA Candidate",
+    org: "NYU Stern School of Business · Strategy, Product Management & Finance",
+    year: "2024 – 2026",
+    description: "GMAT 750 (98th percentile) · Dean's List · Microsoft AI Hackathon runners-up. Developed AI-driven platform to record and optimize employee workflows.",
+    tags: ["MBA", "Strategy", "Product Management", "Finance"],
     detail: {
-      overview: "Promoted to Associate PM, leading firmwide capital optimization across trading and secured financing businesses.",
+      overview: "Pursuing MBA at NYU Stern with specialization in Strategy, Product Management, and Finance.",
       bullets: [
-        "Improved capital buffer efficiency by $1.2B with ~$25M annual P&L impact",
-        "Coordinated 10+ regions across Risk, Trading, Legal, Compliance, and Engineering",
-        "Designed experimentation frameworks accelerating insight generation by 32%",
-        "Supported Goldman Sachs' China entity acquisition with cross-border regulatory execution"
-      ]
-    }
-  },
-  {
-    logo: LOGOS.goldman,
-    abbr: "GS",
-    role: "Analyst · Software Engineer",
-    org: "Goldman Sachs · Bangalore",
-    year: "2019 – 2021",
-    description: "Redesigned global risk assessment workflows using SQL and API integrations, reducing cycle time from 8 hours to 2 hours.",
-    tags: ["Software Engineering", "SQL", "APIs", "Risk"],
-    detail: {
-      overview: "Started career as a Software Engineer at Goldman Sachs, partnering with Controllers and Credit teams.",
-      bullets: [
-        "Redesigned global risk assessment and monitoring workflows",
-        "Used SQL and API integrations to reduce cycle time from 8 hours to 2 hours",
-        "Partnered cross-functionally with Controllers and Credit teams"
+        "GMAT 750 — 98th percentile",
+        "Dean's List honoree",
+        "Microsoft AI Hackathon — Runners-up: built AI-driven platform to record and optimize employee workflows",
+        "VP positions in Stern Technology Association, Asian Business Society, and Arts, Culture & Cuisine Club"
       ]
     }
   },
@@ -264,8 +196,7 @@ const JOURNEY = [
       bullets: [
         "Captained the soccer team to victory in 5 national tournaments",
         "Coached the women's team to win a 64-team event",
-        "Organized annual sports tournaments with over 200 participants",
-        "Managed a team of 12 members"
+        "Organized annual sports tournaments with over 200 participants"
       ]
     }
   }
