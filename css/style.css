@@ -134,9 +134,9 @@ nav {
   line-height: 1.4;
 }
 .stat-logo {
-  height: 16px;
+  height: 24px;
   width: auto;
-  max-width: 56px;
+  max-width: 80px;
   object-fit: contain;
 }
 
