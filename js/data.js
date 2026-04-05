@@ -123,6 +123,10 @@ const SKILLS = [
   {
     title: "Delivery & Tools",
     tags: ["Agile/Scrum", "Jira", "GitHub", "Figma", "Design Systems"]
+  },
+  {
+    title: "Engineering",
+    tags: ["Python", "React", "Node.js", "SQL", "Supabase", "REST APIs", "Streamlit", "Git"]
   }
 ];
 
@@ -133,6 +137,7 @@ const JOURNEY = [
     role: "Product Manager",
     org: "Goldman Sachs · Bangalore",
     year: "2019 – 2024",
+    url: "goldman.html",
     description: "5 years at Goldman Sachs, starting in software engineering and growing into Product Management. Led capital optimization initiative improving efficiency by $1.2B with ~$25M annual P&L impact across 10+ regions.",
     tags: ["Product Management", "Capital Markets", "SQL", "Risk", "Software Engineering"],
     detail: {
@@ -151,7 +156,8 @@ const JOURNEY = [
     role: "MBA Product Manager Intern",
     org: "Esusu · Credit-Building Fintech · New York",
     year: "Summer 2025",
-    description: "Owned 0→1 AI mortgage underwriting product. Improved pilot-to-contract conversion by 22% using SQL analysis and user research.",
+    url: "esusu.html",
+    description: "Owned 0→1 AI mortgage underwriting product. Improved pilot-to-contract conversion by 22%, engaged 8+ lenders, and helped surface a $2M potential pipeline in lender contracts.",
     tags: ["PM", "Fintech", "AI", "0→1"],
     detail: {
       overview: "Summer internship at Esusu, a credit-building fintech focused on mortgage and consumer lending.",
