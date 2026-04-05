@@ -130,26 +130,26 @@ const JOURNEY = [
   {
     logo: LOGOS.goldman,
     abbr: "GS",
-    role: "Software Engineer & Product Manager",
+    role: "Product Manager",
     org: "Goldman Sachs · Bangalore",
     year: "2019 – 2024",
     url: "goldman.html",
-    description: "Started as a software engineer building risk systems, then grew into product management. Led capital optimization initiative improving efficiency by $1.2B with ~$25M annual P&L impact across 10+ regions.",
-    tags: ["Software Engineering", "PM", "Capital Markets", "SQL", "Risk"],
+    description: "5 years at Goldman Sachs, starting in software engineering and growing into Product Management. Led capital optimization initiative improving efficiency by $1.2B with ~$25M annual P&L impact across 10+ regions.",
+    tags: ["Product Management", "Capital Markets", "SQL", "Risk", "Software Engineering"],
     detail: {
       overview: "5 years at Goldman Sachs spanning software engineering and product management.",
       bullets: [
         "Built and redesigned global risk assessment workflows, reducing cycle time from 8 hours to 2 hours",
         "Grew into PM role leading firmwide capital optimization across 10+ regions",
         "Improved capital buffer efficiency by $1.2B with ~$25M annual P&L impact",
-        "Supported Goldman Sachs' China entity acquisition with cross-border regulatory execution"
+        "Supported Goldman Sachs China entity acquisition with cross-border regulatory execution"
       ]
     }
   },
   {
     logo: LOGOS.esusu,
     abbr: "ES",
-    role: "Product Manager Intern",
+    role: "MBA Product Manager Intern",
     org: "Esusu · Credit-Building Fintech · New York",
     year: "Summer 2025",
     url: "esusu.html",
@@ -162,41 +162,6 @@ const JOURNEY = [
         "Leveraged verified rental cash-flow data to define product vision and roadmap",
         "Built competitive landscape benchmarking alternative income verification models",
         "Improved pilot-to-contract conversion by 22% via SQL analysis and user feedback"
-      ]
-    }
-  },
-  {
-    logo: LOGOS.nyu,
-    abbr: "NYU",
-    role: "MBA Candidate",
-    org: "NYU Stern School of Business · Strategy, Product Management & Finance",
-    year: "2024 – 2026",
-    description: "GMAT 750 (98th percentile) · Dean's List · Microsoft AI Hackathon runners-up. Developed AI-driven platform to record and optimize employee workflows.",
-    tags: ["MBA", "Strategy", "Product Management", "Finance"],
-    detail: {
-      overview: "Pursuing MBA at NYU Stern with specialization in Strategy, Product Management, and Finance.",
-      bullets: [
-        "GMAT 750 — 98th percentile",
-        "Dean's List honoree",
-        "Microsoft AI Hackathon — Runners-up: built AI-driven platform to record and optimize employee workflows",
-        "VP positions in Stern Technology Association, Asian Business Society, and Arts, Culture & Cuisine Club"
-      ]
-    }
-  },
-  {
-    logo: LOGOS.daiict,
-    abbr: "DA",
-    role: "B.Tech in ICT",
-    org: "DA-IICT · Gandhinagar, India",
-    year: "2015 – 2019",
-    description: "Information and Communication Technology. Captained soccer team to 5 national tournament victories. Coached women's team to win a 64-team event.",
-    tags: ["Engineering", "ICT", "Leadership"],
-    detail: {
-      overview: "Bachelor of Technology in Information and Communication Technology from DA-IICT, Gandhinagar.",
-      bullets: [
-        "Captained the soccer team to victory in 5 national tournaments",
-        "Coached the women's team to win a 64-team event",
-        "Organized annual sports tournaments with over 200 participants"
       ]
     }
   }
