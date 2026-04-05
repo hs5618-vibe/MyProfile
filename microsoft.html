@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Microsoft AI Hackathon — Het Shah</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .cs-wrap { max-width: 860px; margin: 0 auto; padding: 100px 6vw 80px; }
+    .cs-back { display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.85rem; color: var(--text-muted); text-decoration: none; margin-bottom: 3rem; transition: color 0.2s; }
+    .cs-back:hover { color: var(--accent); }
+    .cs-eyebrow { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent); margin-bottom: 0.75rem; }
+    .cs-title { font-family: 'DM Serif Display', serif; font-size: clamp(2.5rem, 6vw, 4rem); font-weight: 400; line-height: 1.1; margin-bottom: 1rem; color: var(--text); }
+    .cs-subtitle { font-size: 1.1rem; color: var(--text-muted); line-height: 1.7; max-width: 680px; margin-bottom: 2.5rem; }
+    .cs-meta { display: flex; flex-wrap: wrap; gap: 2rem; padding: 1.5rem 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); margin-bottom: 3rem; }
+    .cs-meta-label { font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted); margin-bottom: 0.3rem; }
+    .cs-meta-value { font-size: 0.9rem; color: var(--text); font-weight: 500; }
+    .cs-tools { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+    .cs-tool { background: var(--tag-bg); border: 1px solid var(--tag-border); border-radius: 20px; padding: 0.2rem 0.75rem; font-size: 0.78rem; color: var(--text); }
+    .cs-section { margin-bottom: 3rem; }
+    .cs-section-title { font-family: 'DM Serif Display', serif; font-size: 1.75rem; font-weight: 400; margin-bottom: 1rem; color: var(--text); }
+    .cs-text { font-size: 1rem; color: var(--text-muted); line-height: 1.8; margin-bottom: 1rem; }
+    .cs-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin: 1.5rem 0; }
+    .cs-stat { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 1.25rem; }
+    .cs-stat-num { font-family: 'DM Serif Display', serif; font-size: 2rem; color: var(--accent); line-height: 1; margin-bottom: 0.3rem; }
+    .cs-stat-label { font-size: 0.8rem; color: var(--text-muted); line-height: 1.4; }
+    .cs-learnings { display: flex; flex-direction: column; gap: 0.75rem; margin: 1.25rem 0; }
+    .cs-learning { background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; padding: 1rem 1.25rem; font-size: 0.92rem; color: var(--text-muted); line-height: 1.6; }
+    .cs-learning strong { color: var(--text); font-weight: 600; display: block; margin-bottom: 0.2rem; }
+    .cs-divider { height: 1px; background: var(--border); margin: 3rem 0; }
+    .cs-cta { display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; padding-top: 2rem; border-top: 1px solid var(--border); }
+
+    /* Flow steps */
+    .cs-pipeline { display: flex; flex-direction: column; gap: 0.5rem; margin: 1.25rem 0; }
+    .cs-pipeline-step { display: flex; gap: 1rem; align-items: flex-start; }
+    .cs-pipeline-num { width: 28px; height: 28px; border-radius: 50%; background: var(--accent); color: #fff; font-size: 0.78rem; font-weight: 600; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 0.1rem; }
+    .cs-pipeline-content { background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; padding: 0.85rem 1rem; flex: 1; }
+    .cs-pipeline-title { font-weight: 600; font-size: 0.88rem; color: var(--text); margin-bottom: 0.2rem; }
+    .cs-pipeline-desc { font-size: 0.82rem; color: var(--text-muted); line-height: 1.5; }
+    .cs-pipeline-line { width: 2px; height: 12px; background: var(--border); margin-left: 13px; }
+
+    /* Quote block */
+    .cs-quote { border-left: 3px solid var(--accent); padding: 1rem 1.25rem; margin: 1.5rem 0; background: var(--bg-card); border-radius: 0 10px 10px 0; }
+    .cs-quote-text { font-size: 0.95rem; color: var(--text); line-height: 1.7; font-style: italic; }
+    .cs-quote-attr { font-size: 0.78rem; color: var(--text-muted); margin-top: 0.5rem; }
+
+    @media (max-width: 768px) { .cs-stats { grid-template-columns: 1fr 1fr; } }
+  </style>
+</head>
+<body>
+
+  <nav><span class="nav-name">Het Shah</span></nav>
+
+  <div class="cs-wrap">
+
+    <a href="index.html" class="cs-back">← Back to portfolio</a>
+
+    <div class="fade-in">
+      <div class="cs-eyebrow">Microsoft AI Hackathon · March 2025 · Runners-up</div>
+      <h1 class="cs-title">Copilot Instructor</h1>
+      <p class="cs-subtitle">New employees spend their first weeks asking colleagues to walk them through tasks. Those colleagues lose hours to training that never quite sticks. We built a product that captures how your best people work and turns it into a guide for everyone who comes after them.</p>
+    </div>
+
+    <div class="cs-meta fade-in">
+      <div>
+        <div class="cs-meta-label">Team</div>
+        <div class="cs-meta-value">Het Shah · Walsh Kang · Octavio Pinto · NYU Stern MBA</div>
+      </div>
+      <div>
+        <div class="cs-meta-label">Timeline</div>
+        <div class="cs-meta-value">One-week hackathon · March 2025</div>
+      </div>
+      <div>
+        <div class="cs-meta-label">Result</div>
+        <div class="cs-meta-value">Runners-up · Invited to present at Stern TechCon</div>
+      </div>
+      <div>
+        <div class="cs-meta-label">Stack</div>
+        <div class="cs-tools">
+          <span class="cs-tool">Microsoft Copilot</span>
+          <span class="cs-tool">M365</span>
+          <span class="cs-tool">SharePoint</span>
+          <span class="cs-tool">Figma</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="cs-section fade-in">
+      <h2 class="cs-section-title">The Problem</h2>
+      <p class="cs-text">Every organisation has the same onboarding problem. A new analyst joins and needs to learn how the team works — how they build models in Excel, how they format decks, how they run their weekly reports. The answer is always the same. Shadow someone, ask around, figure it out.</p>
+      <p class="cs-text">This is expensive in both directions. Senior team members lose time to informal training. Junior employees learn inconsistently, picking up whoever's habits they happened to observe rather than the team's actual best practices. And none of it is documented, so the cycle repeats with every new hire.</p>
+      <p class="cs-text">Most companies have tried to solve this with written SOPs or video recordings. Both go stale fast and nobody watches them. The knowledge lives in people's heads and walks out the door when they leave.</p>
+    </div>
+
+    <div class="cs-divider"></div>
+
+    <div class="cs-section fade-in">
+      <h2 class="cs-section-title">What We Built</h2>
+      <p class="cs-text">Copilot Instructor is a Microsoft 365 integration that watches how your team members complete tasks, synthesises the best practices across multiple people, and turns them into interactive tutorials for new employees — all without anyone having to sit down and write documentation.</p>
+
+      <div class="cs-pipeline">
+        <div class="cs-pipeline-step">
+          <div class="cs-pipeline-num">1</div>
+          <div class="cs-pipeline-content">
+            <div class="cs-pipeline-title">Copilot observes</div>
+            <div class="cs-pipeline-desc">When a team member completes a recurring task in any M365 app (Excel, PowerPoint, Outlook, Teams), Copilot records the sequence of actions with their permission.</div>
+          </div>
+        </div>
+        <div class="cs-pipeline-line"></div>
+        <div class="cs-pipeline-step">
+          <div class="cs-pipeline-num">2</div>
+          <div class="cs-pipeline-content">
+            <div class="cs-pipeline-title">Best practices are synthesised</div>
+            <div class="cs-pipeline-desc">Multiple team members completing the same task gives Copilot enough signal to identify the most efficient, accurate approach. It does not just record one person. It learns from the whole team.</div>
+          </div>
+        </div>
+        <div class="cs-pipeline-line"></div>
+        <div class="cs-pipeline-step">
+          <div class="cs-pipeline-num">3</div>
+          <div class="cs-pipeline-content">
+            <div class="cs-pipeline-title">Tutorials are created and stored</div>
+            <div class="cs-pipeline-desc">The synthesised workflow is turned into a step-by-step tutorial stored in a searchable SharePoint library. Each tutorial is tagged to the team, the tool, and the task type.</div>
+          </div>
+        </div>
+        <div class="cs-pipeline-line"></div>
+        <div class="cs-pipeline-step">
+          <div class="cs-pipeline-num">4</div>
+          <div class="cs-pipeline-content">
+            <div class="cs-pipeline-title">Copilot guides new employees in real time</div>
+            <div class="cs-pipeline-desc">When a new analyst starts a task for the first time, Copilot detects it and offers to guide them through the tutorial interactively — step by step, inside the M365 app they are already using.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cs-divider"></div>
+
+    <div class="cs-section fade-in">
+      <h2 class="cs-section-title">My Role</h2>
+      <p class="cs-text">I led the product definition and the pitch. In a one-day hackathon there is not much time for division of labour — everyone does everything. My focus was on making sure we had a clear problem statement, a product that actually solved it, and a story that judges could follow in five minutes.</p>
+      <p class="cs-text">I built the wireframes in Figma showing the Copilot sidebar experience, the tutorial library interface, and the onboarding flow for a new analyst. The wireframes made the idea concrete enough that the judges could see exactly how it would work inside tools they use every day.</p>
+      <p class="cs-text">We were judged by Chris Smellie and Mike Pell from Microsoft, who pushed us on scalability and privacy — how does Copilot know which actions to record, and how do you prevent it from capturing sensitive information? Those were the right questions and we had good answers ready.</p>
+    </div>
+
+    <div class="cs-divider"></div>
+
+    <div class="cs-section fade-in">
+      <h2 class="cs-section-title">The Result</h2>
+      <div class="cs-stats">
+        <div class="cs-stat">
+          <div class="cs-stat-num">#2</div>
+          <div class="cs-stat-label">runners-up out of all competing teams</div>
+        </div>
+        <div class="cs-stat">
+          <div class="cs-stat-num">+1</div>
+          <div class="cs-stat-label">invited to present again at Stern TechCon two days later</div>
+        </div>
+        <div class="cs-stat">
+          <div class="cs-stat-num">1 week</div>
+          <div class="cs-stat-label">from blank page to finished pitch</div>
+        </div>
+      </div>
+
+      <div class="cs-quote">
+        <div class="cs-quote-text">"Copilot Instructor — a new way to capture best practices within a team to create the perfect tutorial for new employees. It curates tutorials for each unique team in an organisation, helping new employees learn quickly, deeply and accurately — without taking time away from colleagues for training."</div>
+        <div class="cs-quote-attr">Team writeup, Microsoft AI Hackathon 2025</div>
+      </div>
+    </div>
+
+    <div class="cs-divider"></div>
+
+    <div class="cs-section fade-in">
+      <h2 class="cs-section-title">What I Took From This</h2>
+      <div class="cs-learnings">
+        <div class="cs-learning">
+          <strong>A good PM frames the problem before the solution</strong>
+          The teams that did not place had interesting technology but unclear problems. We spent the first hour of the hackathon making sure we agreed on exactly who was frustrated, why, and what success looked like for them. The product came out of that, not the other way around.
+        </div>
+        <div class="cs-learning">
+          <strong>Wireframes do more work than words in a pitch</strong>
+          Showing judges a Figma prototype of the Copilot sidebar experience made the idea real in a way a slide deck could not. They could see themselves using it. That is what separates a convincing product pitch from a concept pitch.
+        </div>
+        <div class="cs-learning">
+          <strong>The hard questions are a gift</strong>
+          When the Microsoft judges pushed on privacy and scalability they were telling us exactly what a real PM at Microsoft would have to solve to ship this. Preparing for those questions and having good answers is the difference between an idea and a product.
+        </div>
+      </div>
+    </div>
+
+    <div class="cs-cta fade-in">
+      <a href="index.html" class="btn">← Back to portfolio</a>
+    </div>
+
+  </div>
+
+  <script>
+    window.addEventListener('load', () => {
+      document.querySelectorAll('.fade-in').forEach(el => el.classList.add('visible'));
+    });
+  </script>
+
+</body>
+</html>
