@@ -133,7 +133,6 @@ const JOURNEY = [
     role: "Product Manager",
     org: "Goldman Sachs · Bangalore",
     year: "2019 – 2024",
-    url: "goldman.html",
     description: "5 years at Goldman Sachs, starting in software engineering and growing into Product Management. Led capital optimization initiative improving efficiency by $1.2B with ~$25M annual P&L impact across 10+ regions.",
     tags: ["Product Management", "Capital Markets", "SQL", "Risk", "Software Engineering"],
     detail: {
@@ -152,7 +151,6 @@ const JOURNEY = [
     role: "MBA Product Manager Intern",
     org: "Esusu · Credit-Building Fintech · New York",
     year: "Summer 2025",
-    url: "esusu.html",
     description: "Owned 0→1 AI mortgage underwriting product. Improved pilot-to-contract conversion by 22% using SQL analysis and user research.",
     tags: ["PM", "Fintech", "AI", "0→1"],
     detail: {
