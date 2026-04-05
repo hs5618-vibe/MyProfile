@@ -6,7 +6,6 @@ function renderTags(tags) {
   return `<div class="tags">${tags.map(t => `<span class="tag">${t}</span>`).join('')}</div>`;
 }
 
-// Logo img with fallback to abbr text if image fails to load
 function logoImg(logo, abbr, cls = 'logo-img') {
   return `<img 
     src="${logo.src}" 
@@ -20,7 +19,7 @@ function logoImg(logo, abbr, cls = 'logo-img') {
 function renderTicker() {
   const track = document.getElementById('ticker-track');
   if (!track) return;
-  const items = [...TICKER, ...TICKER]; // duplicate for seamless loop
+  const items = [...TICKER, ...TICKER];
   track.innerHTML = items.map(item => `
     <div class="ticker-item">
       <div class="ticker-logo-wrap">
@@ -34,6 +33,7 @@ function renderTicker() {
 // ─── WORK CARDS ───────────────────────────
 function renderWorkCards() {
   const grid = document.getElementById('work-grid');
+  if (!grid) return;
   grid.innerHTML = WORK.map(w => `
     <div class="work-card fade-in">
       <div class="work-card-top">
@@ -47,7 +47,6 @@ function renderWorkCards() {
         ? `<a href="${w.url}" class="detail-btn">View full case study →</a>`
         : `<button class="detail-btn" onclick="openModal('work', '${w.id}')">View full case study →</button>`
       }
-
     </div>
   `).join('');
 }
@@ -55,6 +54,7 @@ function renderWorkCards() {
 // ─── CONSULTING CARDS ─────────────────────
 function renderConsultingCards() {
   const grid = document.getElementById('consulting-grid');
+  if (!grid) return;
   grid.innerHTML = CONSULTING.map(c => `
     <div class="consulting-card fade-in" onclick="openModal('consulting', '${c.id}')">
       <div class="consulting-label">${c.label}</div>
@@ -69,6 +69,7 @@ function renderConsultingCards() {
 // ─── SKILLS ───────────────────────────────
 function renderSkills() {
   const grid = document.getElementById('skills-grid');
+  if (!grid) return;
   grid.innerHTML = SKILLS.map(s => `
     <div class="skill-card fade-in">
       <div class="skill-card-title">${s.title}</div>
@@ -80,6 +81,7 @@ function renderSkills() {
 // ─── JOURNEY ──────────────────────────────
 function renderJourney() {
   const grid = document.getElementById('journey-grid');
+  if (!grid) return;
   grid.innerHTML = JOURNEY.map(j => {
     const id = j.role.replace(/[^a-z0-9]/gi, '-').toLowerCase();
     return `
@@ -92,6 +94,7 @@ function renderJourney() {
           <div class="journey-org">${j.org}</div>
           <div class="journey-desc">${j.description}</div>
           ${renderTags(j.tags)}
+          ${j.url ? `<a href="${j.url}" class="journey-case-link" onclick="event.stopPropagation()">View case study →</a>` : ''}
         </div>
         <div class="journey-year">📅 ${j.year}</div>
       </div>
