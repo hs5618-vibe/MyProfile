@@ -429,15 +429,18 @@ section {
 .journey-case-link {
   display: inline-flex;
   align-items: center;
-  margin-top: 0.5rem;
-  font-size: 0.82rem;
-  color: var(--accent);
+  margin-top: 0.75rem;
+  font-size: 0.85rem;
   font-weight: 500;
   text-decoration: none;
-  gap: 0.25rem;
-  transition: gap 0.2s;
+  gap: 0.4rem;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-sm);
+  background: var(--accent);
+  color: #fff;
+  transition: background 0.2s;
 }
-.journey-case-link:hover { gap: 0.5rem; }
+.journey-case-link:hover { background: var(--accent-light); }
 
 /* ─────────────────────────────────────────
    MODAL
