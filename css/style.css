@@ -218,7 +218,7 @@ nav {
   display: flex;
   align-items: center;
   gap: 2.5rem;
-  padding: 1.75rem 6vw;
+  padding: 2.5rem 6vw;
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
   background: var(--bg-card);
@@ -256,9 +256,9 @@ nav {
 .logos-bar-item:hover { opacity: 1; }
 
 .logos-bar-logo {
-  height: 28px;
+  height: 100px;
   width: auto;
-  max-width: 110px;
+  max-width: 220px;
   object-fit: contain;
   display: block;
 }
