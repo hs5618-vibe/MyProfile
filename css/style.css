@@ -238,9 +238,9 @@ nav {
 .logos-bar-grid {
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: flex-start;
   flex: 1;
-  gap: 0;
+  gap: 2rem;
 }
 
 .logos-bar-item {
