@@ -256,9 +256,9 @@ nav {
 .logos-bar-item:hover { opacity: 1; }
 
 .logos-bar-logo {
-  height: 100px;
+  height: 48px;
   width: auto;
-  max-width: 220px;
+  max-width: 140px;
   object-fit: contain;
   display: block;
 }
