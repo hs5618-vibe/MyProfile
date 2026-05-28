@@ -3,13 +3,13 @@
 // ─────────────────────────────────────────
 
 const LOGOS = {
-  nyu:        { src: "https://www.google.com/s2/favicons?domain=stern.nyu.edu&sz=64", alt: "NYU" },
-  goldman:    { src: "https://www.google.com/s2/favicons?domain=goldmansachs.com&sz=64", alt: "Goldman Sachs" },
-  esusu:      { src: "https://www.google.com/s2/favicons?domain=esusu.org&sz=64", alt: "Esusu" },
-  daiict:     { src: "https://www.google.com/s2/favicons?domain=daiict.ac.in&sz=64", alt: "DA-IICT" },
-  endless:    { src: "https://www.google.com/s2/favicons?domain=endlessfrontierlabs.com&sz=64", alt: "Endless Frontier Labs" },
-  quantit:    { src: "https://www.google.com/s2/favicons?domain=quantit.io&sz=64", alt: "Quantit" },
-  nyu_accel:  { src: "https://www.google.com/s2/favicons?domain=nyu.edu&sz=64", alt: "NYU AI Accelerator" },
+  nyu:        { src: "assets/logos/nyu.png",       alt: "NYU Stern" },
+  goldman:    { src: "assets/logos/goldman.png",   alt: "Goldman Sachs" },
+  esusu:      { src: "assets/logos/esusu.png",     alt: "Esusu" },
+  daiict:     { src: "assets/logos/daiict.png",    alt: "DA-IICT" },
+  endless:    { src: "assets/logos/endless.png",   alt: "Endless Frontier Labs" },
+  quantit:    { src: "assets/logos/quantit.png",   alt: "Quantit" },
+  nyu_accel:  { src: "assets/logos/nyu_accel.png", alt: "NYU AI Accelerator" },
 };
 
 const TICKER = [
@@ -145,7 +145,7 @@ const JOURNEY = [
       bullets: [
         "Built and redesigned global risk assessment workflows, reducing cycle time from 8 hours to 2 hours",
         "Grew into PM role leading firmwide capital optimization across 10+ regions",
-        "Improved capital buffer efficiency by $1.2B with ~$25M annual P&L impact",
+        "Freed $1.2B in capital buffer with ~$25M annual P&L impact",
         "Supported Goldman Sachs China entity acquisition with cross-border regulatory execution"
       ]
     }
