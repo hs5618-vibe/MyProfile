@@ -4,7 +4,7 @@
 
 document.addEventListener('DOMContentLoaded', () => {
   // Render all sections from data
-  renderTicker();
+  renderLogosBar();
   renderWorkCards();
   renderConsultingCards();
   renderSkills();
@@ -19,6 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }, { threshold: 0.08 });
+
   fadeEls.forEach(el => observer.observe(el));
 
   // Re-observe after dynamic render (cards added by JS)

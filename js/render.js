@@ -15,17 +15,19 @@ function logoImg(logo, abbr, cls = 'logo-img') {
   /><span class="logo-fallback" style="display:none">${abbr}</span>`;
 }
 
-// ─── TICKER ───────────────────────────────
-function renderTicker() {
-  const track = document.getElementById('ticker-track');
-  if (!track) return;
-  const items = [...TICKER, ...TICKER];
-  track.innerHTML = items.map(item => `
-    <div class="ticker-item">
-      <div class="ticker-logo-wrap">
-        ${logoImg(item.logo, item.name.substring(0, 2).toUpperCase(), 'ticker-logo')}
-      </div>
-      <span class="ticker-name">${item.name}</span>
+// ─── LOGOS BAR (Sierra-style static grid, replaces ticker) ────────────────
+function renderLogosBar() {
+  const grid = document.getElementById('logos-bar-grid');
+  if (!grid) return;
+  grid.innerHTML = TICKER.map(item => `
+    <div class="logos-bar-item">
+      <img 
+        class="logos-bar-logo" 
+        src="${item.logo.src}" 
+        alt="${item.logo.alt}"
+        onerror="this.style.display='none'"
+      />
+      <span class="logos-bar-name">${item.name}</span>
     </div>
   `).join('');
 }
@@ -133,7 +135,6 @@ function openModal(type, id) {
       <ul>${item.detail.bullets.map(b => `<li>${b}</li>`).join('')}</ul>
     </div>
   `;
-
   document.getElementById('modal-overlay').classList.add('open');
   document.body.style.overflow = 'hidden';
 }
